@@ -1,7 +1,8 @@
 import React from "react"
 // import { Link } from "gatsby"
-
-import { Container, Row, Col } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import Tabs from "react-bootstrap/Tabs"
+import Tab from "react-bootstrap/Tab"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -11,9 +12,8 @@ const Despre = () => (
   <Layout>
     <SEO title="Despre" />
     <Container className="despre-container">
-      <Row>
-        <h3>Despre noi</h3>
-        <Col lg={8}>
+      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tab eventKey="home" title="Despre">
           Lorem ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -30,8 +30,15 @@ const Despre = () => (
           readable English. Various versions have evolved over the years,
           sometimes by accident, sometimes on purpose (injected humour and the
           like).
-        </Col>
-      </Row>
+        </Tab>
+        <Tab eventKey="profile" title="Ce facem">
+          Some
+        </Tab>
+        <Tab eventKey="contact" title="Puncte de lucru">
+          Some
+        </Tab>
+      </Tabs>
+
       <div className="despre-rectangle"></div>
     </Container>
   </Layout>
