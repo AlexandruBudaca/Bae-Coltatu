@@ -1,0 +1,56 @@
+.hamburger {
+    width: 25px;
+    height: 2px;
+    background-color: yellow;
+    margin: 6px 0;
+}
+
+.navbar-toggler {
+    border-color: yellow !important;
+    background-color: black;
+}
+
+.navbar-nav {
+    flex-direction: column !important;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+}
+
+.navbar-nav a {
+    color: rgb(121, 121, 121);
+    padding-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-nav a:hover {
+    color: rgb(161, 161, 161);
+    transform: scale(1.1);
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    .navbar-expand-lg {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    .navbar-nav {
+        padding-top: 0px;
+    }
+
+    .navbar-nav {
+        background-color: transparent;
+        align-items: flex-start;
+        border: none;
+    }
+
+    .navbar-nav a {
+        color: rgb(182, 182, 182);
+
+    }
+}

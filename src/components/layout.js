@@ -1,45 +1,68 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import { Navbar, Nav } from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./Styles/navbar.css"
+import logo from "../images/logoColtatu.png"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Navbar collapseOnSelect expand="lg" fixed="top">
+        <Navbar.Brand href="/">
+          <img
+            src={logo}
+            width="60"
+            height="60"
+            className="d-inline-block align-top"
+            alt="React Bootstrap logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle>
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+        </Navbar.Toggle>
+
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Link to="/" activeStyle={{ color: `#000` }}>
+              Home
+            </Link>
+            <Link to="/Despre/" activeStyle={{ color: "black" }}>
+              Despre
+            </Link>
+            <Link to="/page-2/" activeStyle={{ color: "gray" }}>
+              Proiecte
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
+      <div>
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer
+          style={{
+            // marginTop: `2rem`,
+            position: `fixed`,
+            bottom: `0`,
+            width: `100%`,
+            height: `60px`,
+            paddingTop: `20px`,
+            color: "black",
+          }}
+        >
+          <p
+            style={{
+              color: "black",
+              marginLeft: `1rem`,
+            }}
+          >
+            {" "}
+            © {new Date().getFullYear()}, BAE
+          </p>
         </footer>
       </div>
     </>

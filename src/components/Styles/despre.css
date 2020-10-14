@@ -1,0 +1,33 @@
+.despre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: small;
+}
+
+.row {
+    padding-top: 2em;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.row h3 {
+    margin-right: 20px;
+
+}
+
+.despre-rectangle {
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    border: 8px solid yellow;
+    left: 50%;
+    top: 40%;
+}
+
+@media only screen and (min-width: 900px) {
+    .despre-container {
+        font-size: 1.1rem;
+    }
+}
