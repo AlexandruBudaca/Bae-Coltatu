@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
             }}
           >
             {" "}
-            © {new Date().getFullYear()}, BAE
+            © {new Date().getFullYear()} BAE
           </p>
         </footer>
       </div>

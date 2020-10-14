@@ -2,19 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     font-size: small;
 }
 
 .row {
-    padding-top: 2em;
+    margin-top: 2em;
     justify-content: center;
     z-index: 1000;
 }
 
 .row h3 {
     margin-right: 20px;
-
 }
 
 .despre-rectangle {
