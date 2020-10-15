@@ -2,7 +2,7 @@
 .carousel-item,
 .carousel-item.active {
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
 }
 
 .d-block {
@@ -13,5 +13,15 @@
 
 .carousel-control-next,
 .carousel-control-prev {
-    display: none;
+    display: none !important;
 }
+
+/* .carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.308);
+    height: 100vh;
+    z-index: 1000;
+} */

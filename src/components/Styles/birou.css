@@ -12,36 +12,45 @@
 
 }
 
-.tab-content {
-    z-index: 1000;
-}
-
 .nav-tabs {
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid yellow !important;
 }
 
 .nav-tabs a {
     color: #696969;
 }
 
-.nav-tabs a:focus {
-    color: transparent;
+.nav-tabs a:hover {
+    border: none;
+    color: black;
+}
+
+.nav-tabs a:active {
+    outline: none;
+    border: none;
 }
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    color: black;
+    color: black !important;
+    font-weight: bold;
     background-color: #fff;
-    border-color: yellow yellow #fff;
+    border-color: yellow yellow #fff !important;
+    border: 2px solid yellow !important;
 }
 
 .despre-rectangle {
     position: fixed;
-    width: 600px;
-    height: 400px;
-    border: 6px solid yellow;
-    left: 50%;
-    top: 40%;
+    width: 500px;
+    height: 300px;
+    border: 4px solid rgba(255, 255, 0, 0.507);
+    left: 60%;
+    top: 50%;
+}
+
+.row {
+    justify-content: center;
+    z-index: 1000;
 }
 
 @media only screen and (min-width: 900px) {}

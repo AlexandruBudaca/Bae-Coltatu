@@ -1,0 +1,31 @@
+.lucrari-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 100px;
+}
+
+.lucrari-container button {
+    color: rgb(121, 121, 121);
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.lucrari-container button:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+
+.lucrari-container button:focus {
+
+    outline: none;
+    border: none;
+}
+
+
+@media only screen and (min-width: 900px) {
+    .lucrari-container {
+        padding-top: 50px;
+    }
+
+}

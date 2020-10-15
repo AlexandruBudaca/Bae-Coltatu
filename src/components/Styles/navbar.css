@@ -7,27 +7,42 @@
 
 .navbar-toggler {
     border-color: yellow !important;
-    background-color: black;
+    background-color: black !important;
 }
 
 .navbar-nav {
     flex-direction: column !important;
     padding: 10px;
+    padding-left: 10px !important;
     background-color: rgb(255, 255, 255);
     align-items: flex-start;
 }
 
+.background-home {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
 .navbar-nav a {
-    color: rgb(121, 121, 121);
+    color: rgb(160, 160, 160);
     padding-top: 20px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .navbar-nav a:hover {
-    color: rgb(161, 161, 161);
+    color: rgb(143, 143, 143);
     transform: scale(1.1);
+}
+
+.location-color {
+    color: grey !important;
+}
+
+.location-color-home {
+    display: none;
 }
 
 
@@ -37,11 +52,13 @@
         flex-direction: column;
         align-items: flex-start;
         height: 100vh;
-        width: 200px;
+        width: 140px;
+        flex-flow: row wrap !important;
     }
 
     .navbar-nav {
         padding-top: 0px;
+        background-color: rgb(121, 121, 121);
     }
 
     .navbar-nav {
@@ -50,8 +67,17 @@
         border: none;
     }
 
-    .navbar-nav a {
-        color: rgb(182, 182, 182);
+    .navbar {
+        align-items: flex-start !important;
+    }
 
+    .location-color {
+        color: white !important;
+    }
+
+    .background-home {
+        display: flex !important;
+        justify-content: center !important;
+        background-color: rgba(0, 0, 0, 0.411) !important;
     }
 }
