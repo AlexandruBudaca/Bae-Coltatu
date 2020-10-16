@@ -18,11 +18,11 @@
     align-items: flex-start;
 }
 
-.background-home {
+/* .background-home {
     display: flex;
     justify-content: center;
     background-color: transparent;
-}
+} */
 
 .navbar-nav a {
     color: rgb(160, 160, 160);
@@ -72,12 +72,14 @@
     }
 
     .location-color {
-        color: white !important;
+        color: rgb(249, 252, 66) !important;
+        /* text-shadow: 1px 2px 4px black; */
+        font-size: 1.1rem;
     }
 
     .background-home {
         display: flex !important;
         justify-content: center !important;
-        background-color: rgba(0, 0, 0, 0.411) !important;
+        background-color: rgba(0, 0, 0, 0.534) !important;
     }
 }
