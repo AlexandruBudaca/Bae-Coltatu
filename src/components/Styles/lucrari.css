@@ -2,22 +2,33 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 100px;
+    height: 150px;
 }
 
-.lucrari-container button {
+.noActive {
     color: rgb(121, 121, 121);
     background-color: transparent;
     border: none;
     font-weight: bold;
 }
 
-.lucrari-container button:hover {
+.noActive:hover {
     color: rgb(0, 0, 0);
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-.lucrari-container button:focus {
+.noActive:focus {
 
+    outline: none;
+    border: none;
+}
+.active {
+    color: black!important;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+.active:focus {
     outline: none;
     border: none;
 }
