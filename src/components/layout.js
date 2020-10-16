@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import { Location } from "@reach/router"
 import Navbar from "./navbar"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <Location>{({ location }) => <Navbar location={location} />}</Location>
+
       <div>
         <main>{children}</main>
         <footer

@@ -1,12 +1,13 @@
 import React from "react"
 
 import { Link } from "gatsby"
+
 import { Navbar, Nav } from "react-bootstrap"
 import logo from "../images/logoColtatu.png"
 import "./Styles/navbar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-const MyNavbar = () => {
+const MyNavbar = ({ location }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
   return (
@@ -14,7 +15,7 @@ const MyNavbar = () => {
       collapseOnSelect
       expand="lg"
       fixed="top"
-      className={window.location.pathname === "/" ? "background-home" : null}
+      className={location.pathname === "/" ? "background-home" : null}
     >
       <Navbar.Brand href="/">
         <img
@@ -36,54 +37,42 @@ const MyNavbar = () => {
           <Link
             to="/"
             activeStyle={{ color: `white` }}
-            className={
-              window.location.pathname === "/" ? "location-color-home" : null
-            }
+            className={location.pathname === "/" ? "location-color-home" : null}
           >
             Home
           </Link>
           <Link
             to="/birou/"
             activeStyle={{ color: "black" }}
-            className={
-              window.location.pathname === rootPath ? "location-color" : null
-            }
+            className={location.pathname === rootPath ? "location-color" : null}
           >
             Birou
           </Link>
           <Link
             to="/lucrari/"
             activeStyle={{ color: "black" }}
-            className={
-              window.location.pathname === rootPath ? "location-color" : null
-            }
+            className={location.pathname === rootPath ? "location-color" : null}
           >
             Lucrari
           </Link>
           <Link
             to="/page-2/"
             activeStyle={{ color: "black" }}
-            className={
-              window.location.pathname === rootPath ? "location-color" : null
-            }
+            className={location.pathname === rootPath ? "location-color" : null}
           >
             Showroom
           </Link>
           <Link
             to="/page-2/"
             activeStyle={{ color: "black" }}
-            className={
-              window.location.pathname === rootPath ? "location-color" : null
-            }
+            className={location.pathname === rootPath ? "location-color" : null}
           >
             Deseneaza
           </Link>
           <Link
             to="/contact/"
             activeStyle={{ color: "black" }}
-            className={
-              window.location.pathname === rootPath ? "location-color" : null
-            }
+            className={location.pathname === rootPath ? "location-color" : null}
           >
             Contact
           </Link>
