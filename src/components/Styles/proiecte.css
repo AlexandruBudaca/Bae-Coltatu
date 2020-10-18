@@ -7,13 +7,36 @@
 }
 .proiecte-row {
     flex-wrap: wrap;
+    width: 90%;
 }
 .proiecteImg {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 @media only screen and (min-width: 900px) {
+    .proiecte-container {
+        justify-content: flex-end;
+        margin-right: 30px;
+    }
+
+}
+@media only screen and (min-width: 1240px) {
+    .proiecte-row {
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .proiecte-row {
+        width: 100%;
+    }
+
+}
+@media only screen and (min-width: 1920px) {
+    .proiecte-row {
+        width: 100%;
+    }
+
     .proiecte-container {
         justify-content: flex-end;
         margin-right: 150px;

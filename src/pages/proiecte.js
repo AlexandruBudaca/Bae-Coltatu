@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
-import pic from "../images/1.jpg"
+import pic from "../images/HomeCarousel/room1.jpg"
 
 import "../components/Styles/proiecte.css"
 const Contact = () => {
