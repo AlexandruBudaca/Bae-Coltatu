@@ -30,19 +30,19 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     homeCarousel: allFile(
-      sort: { fields: base, order: ASC }
       filter: {
         extension: { regex: "/(jpg)|(png)/" }
         relativeDirectory: { eq: "HomeCarousel" }
       }
+      sort: { fields: base, order: ASC }
     ) {
       edges {
         node {
           id
           base
           childImageSharp {
-            fluid(maxWidth: 2000, maxHeight: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+            fluid {
+              src
             }
           }
         }
