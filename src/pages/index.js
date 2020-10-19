@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
 
-    <Carousel pause={false} interval={2500}>
+    <Carousel pause={false} interval={2500} indicators={false}>
       {data.homeCarousel.edges.map(images => (
         <Carousel.Item key={images.node.id}>
           <Img
@@ -41,8 +41,8 @@ export const pageQuery = graphql`
           id
           base
           childImageSharp {
-            fluid(quality: 90, maxWidth: 2000) {
-              src
+            fluid(quality: 90, maxWidth: 3000, webpQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
