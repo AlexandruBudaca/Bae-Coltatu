@@ -38,7 +38,9 @@
     border-color: yellow yellow #fff !important;
     border: 2px solid yellow !important;
 }
-
+.nav-link {
+    padding: 0.5rem 0.5rem ;
+}
 .despre-rectangle {
     position: fixed;
     width: 500px;
