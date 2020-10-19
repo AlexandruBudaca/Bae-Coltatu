@@ -14,6 +14,7 @@ const IndexPage = ({ data }) => (
       {data.homeCarousel.edges.map(images => (
         <Carousel.Item key={images.node.id}>
           <Img
+            loading="eager"
             className="d-block w-100"
             fluid={images.node.childImageSharp.fluid}
             alt="images.node.base"
@@ -41,8 +42,8 @@ export const pageQuery = graphql`
           id
           base
           childImageSharp {
-            fluid(quality: 100, maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
+            fluid(quality: 100, maxWidth: 3000, maxHeight: 1000) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
