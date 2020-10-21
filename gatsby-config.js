@@ -27,6 +27,29 @@ module.exports = {
         icon: `src/images/logoColtatu.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-mongodb",
+      options: {
+        dbName: "coltatu",
+        collection: [`concepte`, `concursuri`, `proiecte`],
+        server: {
+          address: "alex-shard-00-00.njtpl.mongodb.net",
+          port: 27017,
+        },
+        auth: {
+          user: "AlexandruBudaca",
+          password: "Selet10!",
+        },
+        extraParams: {
+          replicaSet: "atlas-nq7h79-shard-0",
+          ssl: true,
+          authSource: "admin",
+          retryWrites: true,
+        },
+        preserveObjectIds: true,
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

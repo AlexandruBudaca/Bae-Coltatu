@@ -1,12 +1,23 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Location } from "@reach/router"
 import Navbar from "./navbar"
 
 const Layout = ({ children }) => {
+  const [showNavbar, setShowNavbar] = useState(false)
+
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setShowNavbar(true)
+    }, 500)
+    return () => clearTimeout(time)
+  })
+
   return (
     <>
-      <Location>{({ location }) => <Navbar location={location} />}</Location>
+      {showNavbar && (
+        <Location>{({ location }) => <Navbar location={location} />}</Location>
+      )}
 
       <div>
         <main>{children}</main>

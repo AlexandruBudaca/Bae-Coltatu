@@ -1,12 +1,16 @@
 import React, { useState } from "react"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Proiecte from "./proiecte"
+import Proiecte from "../components/proiecte"
+import Concursuri from "../components/concursuri"
+import Concepte from "../components/concepte"
 import { Container, Row, Col } from "react-bootstrap"
 import "../components/Styles/lucrari.css"
 
-const Lucrari = () => {
+const Lucrari = props => {
   const [activeBtn, setActiveBtn] = useState("proiecte")
+  const myData = props.data.allMongodbColtatuProiecte.edges[0].node.linkuri[0]
+  console.log(myData)
 
   const changeActiveBtn = e => {
     setActiveBtn(e.target.value)
@@ -14,7 +18,6 @@ const Lucrari = () => {
 
   return (
     <Layout>
-      {console.log(activeBtn)}
       <Container className="lucrari-container">
         <Row>
           <Col>
@@ -49,8 +52,23 @@ const Lucrari = () => {
           </Col>
         </Row>
       </Container>
-      <Proiecte />
+      {activeBtn === "proiecte" ? <Proiecte pic={myData} /> : null}
+      {activeBtn === "concepte" ? <Concepte /> : null}
+      {activeBtn === "concursuri" ? <Concursuri /> : null}
     </Layout>
   )
 }
 export default Lucrari
+
+export const pageQuery = graphql`
+  query {
+    allMongodbColtatuProiecte {
+      edges {
+        node {
+          linkuri
+          titlu
+        }
+      }
+    }
+  }
+`
