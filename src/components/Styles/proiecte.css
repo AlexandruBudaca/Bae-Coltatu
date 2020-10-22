@@ -13,6 +13,15 @@
     width: 100%;
     margin-top: 50px;
 }
+.col-projects {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.col-projects img{
+   height: 240px;
+}
 
 @media only screen and (min-width: 900px) {
     .proiecte-container {

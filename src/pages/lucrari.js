@@ -9,7 +9,7 @@ import "../components/Styles/lucrari.css"
 
 const Lucrari = props => {
   const [activeBtn, setActiveBtn] = useState("proiecte")
-  const myData = props.data.allMongodbColtatuProiecte.edges[0].node.linkuri[0]
+  const myData = props.data.allMongodbColtatuProiecte.edges
   console.log(myData)
 
   const changeActiveBtn = e => {
@@ -19,7 +19,7 @@ const Lucrari = props => {
   return (
     <Layout>
       <Container className="lucrari-container">
-        <Row>
+        <Row className="row-lucrari">
           <Col>
             {" "}
             <button

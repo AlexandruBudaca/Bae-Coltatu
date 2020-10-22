@@ -3,8 +3,14 @@
     justify-content: flex-end;
     padding-top: 100px;
     height: 150px;
+   
 }
-
+.row-lucrari {
+     position: fixed;
+     z-index: 2000;
+     background-color: white;
+     padding: 10px;
+}
 .noActive {
     color: rgb(121, 121, 121);
     background-color: transparent;
