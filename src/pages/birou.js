@@ -10,7 +10,7 @@ import "../components/Styles/birou.css"
 
 const Despre = () => (
   <Layout>
-    <SEO title="Despre" />
+    <SEO title="Birou" />
     <Container className="despre-container">
       <Row>
         <Col lg={10}>

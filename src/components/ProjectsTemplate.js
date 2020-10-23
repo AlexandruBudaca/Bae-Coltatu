@@ -11,7 +11,7 @@ const Contact = ({ data }) => {
             <img
               className="proiecteImg"
               src={project.node.linkuri[0]}
-              alt="First slide"
+              alt={project.node.titlu}
             />
             <p>{project.node.titlu}</p>
           </Col>

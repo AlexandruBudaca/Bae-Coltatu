@@ -8,6 +8,9 @@
 .proiecte-row {
     flex-wrap: wrap;
     width: 90%;
+    overflow: scroll;
+    max-height: 80vh;
+    
 }
 .proiecteImg {
     width: 100%;
