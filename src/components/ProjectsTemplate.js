@@ -2,11 +2,11 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import "../components/Styles/proiecte.css"
 
-const Contact = ({ data }) => {
+const ProjectTemplate = ({ myData }) => {
   return (
     <Container className="proiecte-container">
       <Row className="proiecte-row">
-        {data.map(project => (
+        {myData.map(project => (
           <Col lg={4} md={6} className="col-projects">
             <img
               className="proiecteImg"
@@ -21,4 +21,4 @@ const Contact = ({ data }) => {
   )
 }
 
-export default Contact
+export default ProjectTemplate
