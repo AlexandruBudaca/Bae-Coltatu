@@ -1,5 +1,5 @@
 import React from "react"
-import ProjectsTemplate from "./ProjectsTemplate"
+import ProjectsTemplate from "./Templates/ProjectsTemplate"
 import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -13,6 +13,7 @@ const Concepte = () => {
               node {
                 titlu
                 linkuri
+                id
               }
             }
           }
@@ -34,6 +35,7 @@ Concepte.propTypes = {
         node: PropTypes.shape({
           title: PropTypes.string.isRequired,
           linkuri: PropTypes.array.isRequired,
+          id: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,
     }).isRequired,
