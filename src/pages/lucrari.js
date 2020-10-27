@@ -18,37 +18,39 @@ const Lucrari = () => {
     <Layout>
       <SEO title="Lucrari" />
       <Container className="lucrari-container">
-        <Row className="row-lucrari">
-          <Col>
-            {" "}
-            <button
-              value="proiecte"
-              onClick={changeActiveBtn}
-              className={activeBtn === "proiecte" ? "active" : "noActive"}
-            >
-              Proiecte
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button
-              value="concepte"
-              onClick={changeActiveBtn}
-              className={activeBtn === "concepte" ? "active" : "noActive"}
-            >
-              Concepte
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button
-              value="concursuri"
-              onClick={changeActiveBtn}
-              className={activeBtn === "concursuri" ? "active" : "noActive"}
-            >
-              Concursuri
-            </button>
-          </Col>
+        <Row>
+          <div className="row-lucrari">
+            <Col>
+              {" "}
+              <button
+                value="proiecte"
+                onClick={changeActiveBtn}
+                className={activeBtn === "proiecte" ? "active" : "noActive"}
+              >
+                Proiecte
+              </button>
+            </Col>
+            <Col>
+              {" "}
+              <button
+                value="concepte"
+                onClick={changeActiveBtn}
+                className={activeBtn === "concepte" ? "active" : "noActive"}
+              >
+                Concepte
+              </button>
+            </Col>
+            <Col>
+              {" "}
+              <button
+                value="concursuri"
+                onClick={changeActiveBtn}
+                className={activeBtn === "concursuri" ? "active" : "noActive"}
+              >
+                Concursuri
+              </button>
+            </Col>
+          </div>
         </Row>
       </Container>
       {activeBtn === "proiecte" ? <Proiecte /> : null}

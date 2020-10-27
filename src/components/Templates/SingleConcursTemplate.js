@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import ImageGallery from "react-image-gallery"
-import { Container, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import "../Styles/proiecte.css"
 
 const SingleConcursTemplate = ({ data }) => {
@@ -19,7 +19,7 @@ const SingleConcursTemplate = ({ data }) => {
             <Link to="/lucrari/" className="back-btn-singleProject">
               Back
             </Link>
-            <Row className="singleProiect-row ">
+            <div className="title-carousel">
               <h5>{data.mongodbColtatuConcursuri.titlu}</h5>
               <ImageGallery
                 items={data.mongodbColtatuConcursuri.linkuri.map(link => ({
@@ -27,13 +27,8 @@ const SingleConcursTemplate = ({ data }) => {
                   thumbnail: link,
                 }))}
               />
-              <div className="proiect-description">
-                <div>{data.mongodbColtatuConcursuri.description}</div>
-                <div>{data.mongodbColtatuConcursuri.description}</div>
-                <div>{data.mongodbColtatuConcursuri.description}</div>
-                <div>{data.mongodbColtatuConcursuri.description}</div>
-              </div>
-            </Row>
+            </div>
+            <div className="proiect-description"></div>
           </Container>{" "}
         </>
       )}
