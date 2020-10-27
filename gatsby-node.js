@@ -1,12 +1,12 @@
 const path = require(`path`)
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const singleProiectTemplate = path.resolve(
     "src/components/Templates/SingleProiectTemplate.js"
   )
 
-  return graphql(`
+  return await graphql(`
     {
       concepte: allMongodbColtatuConcepte {
         edges {
