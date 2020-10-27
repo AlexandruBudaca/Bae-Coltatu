@@ -11,27 +11,31 @@ import "../Styles/proiecte.css"
 const SingleProiectTemplate = ({ data }) => {
   return (
     <Layout>
-      <SEO title={data.mongodbColtatuProiecte.titlu} />
-      <Container className="singleProiect-container">
-        <Link to="/lucrari/" className="back-btn-singleProject">
-          Back
-        </Link>
-        <Row className="singleProiect-row ">
-          <h5>{data.mongodbColtatuProiecte.titlu}</h5>
-          <ImageGallery
-            items={data.mongodbColtatuProiecte.linkuri.map(link => ({
-              original: link,
-              thumbnail: link,
-            }))}
-          />
-          <div className="proiect-description">
-            <div>{data.mongodbColtatuProiecte.description}</div>
-            <div>{data.mongodbColtatuProiecte.description}</div>
-            <div>{data.mongodbColtatuProiecte.description}</div>
-            <div>{data.mongodbColtatuProiecte.description}</div>
-          </div>
-        </Row>
-      </Container>
+      {data && (
+        <>
+          <SEO title={data.mongodbColtatuProiecte.titlu} />
+          <Container className="singleProiect-container">
+            <Link to="/lucrari/" className="back-btn-singleProject">
+              Back
+            </Link>
+            <Row className="singleProiect-row ">
+              <h5>{data.mongodbColtatuProiecte.titlu}</h5>
+              <ImageGallery
+                items={data.mongodbColtatuProiecte.linkuri.map(link => ({
+                  original: link,
+                  thumbnail: link,
+                }))}
+              />
+              <div className="proiect-description">
+                <div>{data.mongodbColtatuProiecte.description}</div>
+                <div>{data.mongodbColtatuProiecte.description}</div>
+                <div>{data.mongodbColtatuProiecte.description}</div>
+                <div>{data.mongodbColtatuProiecte.description}</div>
+              </div>
+            </Row>
+          </Container>{" "}
+        </>
+      )}
     </Layout>
   )
 }
