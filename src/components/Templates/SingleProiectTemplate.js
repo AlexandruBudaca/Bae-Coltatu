@@ -9,7 +9,6 @@ import { Container } from "react-bootstrap"
 import "../Styles/proiecte.css"
 
 const SingleProiectTemplate = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       {data && (
