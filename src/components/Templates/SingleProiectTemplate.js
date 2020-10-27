@@ -9,16 +9,6 @@ import { Container, Row } from "react-bootstrap"
 import "../Styles/proiecte.css"
 
 const SingleProiectTemplate = ({ data }) => {
-  let images
-  if (data.mongodbColtatuProiecte.linkuri === null) {
-    return null
-  } else {
-    images = data.mongodbColtatuProiecte.linkuri.map(link => ({
-      original: link,
-      thumbnail: link,
-    }))
-  }
-
   return (
     <Layout>
       <SEO title={data.mongodbColtatuProiecte.titlu} />
@@ -28,7 +18,12 @@ const SingleProiectTemplate = ({ data }) => {
         </Link>
         <Row className="singleProiect-row ">
           <h5>{data.mongodbColtatuProiecte.titlu}</h5>
-          <ImageGallery items={images} />
+          <ImageGallery
+            items={data.mongodbColtatuProiecte.linkuri.map(link => ({
+              original: link,
+              thumbnail: link,
+            }))}
+          />
           <div className="proiect-description">
             <div>{data.mongodbColtatuProiecte.description}</div>
             <div>{data.mongodbColtatuProiecte.description}</div>
