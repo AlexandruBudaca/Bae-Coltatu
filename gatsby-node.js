@@ -2,7 +2,7 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  const singleProiectTemplate = path.resolve(
+  const SingleProiectTemplate = path.resolve(
     "src/components/Templates/SingleProiectTemplate.js"
   )
 
@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.concepte.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
-        component: singleProiectTemplate,
+        component: SingleProiectTemplate,
         context: {
           id: node.id,
         },
@@ -48,7 +48,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.concursuri.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
-        component: singleProiectTemplate,
+        component: SingleProiectTemplate,
         context: {
           id: node.id,
         },
@@ -57,7 +57,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.proiecte.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
-        component: singleProiectTemplate,
+        component: SingleProiectTemplate,
         context: {
           id: node.id,
         },
