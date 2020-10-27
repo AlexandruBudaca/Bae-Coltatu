@@ -8,30 +8,30 @@ import ImageGallery from "react-image-gallery"
 import { Container, Row } from "react-bootstrap"
 import "../Styles/proiecte.css"
 
-const SingleProiectTemplate = ({ data }) => {
+const SingleConceptTemplate = ({ data }) => {
   console.log(data)
   return (
     <Layout>
       {data && (
         <>
-          <SEO title={data.mongodbColtatuProiecte.titlu} />
+          <SEO title={data.mongodbColtatuConcepte.titlu} />
           <Container className="singleProiect-container">
             <Link to="/lucrari/" className="back-btn-singleProject">
               Back
             </Link>
             <Row className="singleProiect-row ">
-              <h5>{data.mongodbColtatuProiecte.titlu}</h5>
+              <h5>{data.mongodbColtatuConcepte.titlu}</h5>
               <ImageGallery
-                items={data.mongodbColtatuProiecte.linkuri.map(link => ({
+                items={data.mongodbColtatuConcepte.linkuri.map(link => ({
                   original: link,
                   thumbnail: link,
                 }))}
               />
               <div className="proiect-description">
-                <div>{data.mongodbColtatuProiecte.description}</div>
-                <div>{data.mongodbColtatuProiecte.description}</div>
-                <div>{data.mongodbColtatuProiecte.description}</div>
-                <div>{data.mongodbColtatuProiecte.description}</div>
+                <div>{data.mongodbColtatuConcepte.description}</div>
+                <div>{data.mongodbColtatuConcepte.description}</div>
+                <div>{data.mongodbColtatuConcepte.description}</div>
+                <div>{data.mongodbColtatuConcepte.description}</div>
               </div>
             </Row>
           </Container>{" "}
@@ -41,11 +41,11 @@ const SingleProiectTemplate = ({ data }) => {
   )
 }
 
-export default SingleProiectTemplate
+export default SingleConceptTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    mongodbColtatuProiecte(id: { eq: $id }) {
+    mongodbColtatuConcepte(id: { eq: $id }) {
       id
       titlu
       linkuri

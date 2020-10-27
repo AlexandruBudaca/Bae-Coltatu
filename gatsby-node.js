@@ -5,7 +5,13 @@ exports.createPages = async ({ actions, graphql }) => {
   const SingleProiectTemplate = path.resolve(
     "src/components/Templates/SingleProiectTemplate.js"
   )
+  const SingleConcursTemplate = path.resolve(
+    "src/components/Templates/SingleConcursTemplate.js"
+  )
 
+  const SingleConceptTemplate = path.resolve(
+    "src/components/Templates/SingleConceptTemplate.js"
+  )
   return await graphql(`
     {
       concepte: allMongodbColtatuConcepte {
@@ -38,7 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.concepte.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
-        component: SingleProiectTemplate,
+        component: SingleConceptTemplate,
         context: {
           id: node.id,
         },
@@ -48,7 +54,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.concursuri.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
-        component: SingleProiectTemplate,
+        component: SingleConcursTemplate,
         context: {
           id: node.id,
         },
