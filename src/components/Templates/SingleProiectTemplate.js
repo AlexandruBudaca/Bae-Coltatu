@@ -9,10 +9,14 @@ import { Container, Row } from "react-bootstrap"
 import "../Styles/proiecte.css"
 
 const SingleProiectTemplate = ({ data }) => {
-  const images = data.mongodbColtatuProiecte.linkuri.map(link => ({
-    original: link,
-    thumbnail: link,
-  }))
+  let images
+
+  if (data) {
+    images = data.mongodbColtatuProiecte.linkuri.map(link => ({
+      original: link,
+      thumbnail: link,
+    }))
+  }
 
   return (
     <Layout>

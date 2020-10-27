@@ -39,5 +39,5 @@ Concepte.propTypes = {
         }).isRequired,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 }

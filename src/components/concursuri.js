@@ -39,5 +39,5 @@ Concursuri.propTypes = {
         }).isRequired,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 }

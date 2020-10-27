@@ -35,7 +35,6 @@ exports.createPages = async ({ actions, graphql }) => {
       Promise.reject(result.errors)
     }
 
-    // Create doc pages
     result.data.concepte.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
@@ -45,7 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-    // Create blog pages
+
     result.data.concursuri.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,

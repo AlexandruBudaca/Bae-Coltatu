@@ -8,7 +8,7 @@ const ProjectTemplate = ({ myData }) => {
     <Container className="proiecte-container">
       <Row className="proiecte-row">
         {myData.map(project => (
-          <Col lg={4} md={6} className="col-projects">
+          <Col lg={4} md={6} className="col-projects" key={project.node.id}>
             <Link to={`/proiect${project.node.id}`}>
               <img
                 className="proiecteImg"

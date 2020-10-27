@@ -39,5 +39,5 @@ Proiecte.propTypes = {
         }).isRequired,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 }
