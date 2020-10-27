@@ -10,8 +10,9 @@ import "../Styles/proiecte.css"
 
 const SingleProiectTemplate = ({ data }) => {
   let images
-
-  if (data.mongodbColtatuProiecte.linkuri) {
+  if (data.mongodbColtatuProiecte.linkuri === null) {
+    return null
+  } else {
     images = data.mongodbColtatuProiecte.linkuri.map(link => ({
       original: link,
       thumbnail: link,
