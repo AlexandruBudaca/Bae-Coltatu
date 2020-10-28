@@ -10,7 +10,7 @@
     width: 90%;
     overflow: scroll;
     max-height: 80vh;
-    
+    margin-top: 50px;
 }
 .proiecteImg {
     width: 100%;
@@ -67,6 +67,7 @@
 @media only screen and (min-width: 1024px) {
     .proiecte-row {
         width: 90%;
+           margin-top: 0px;
     }
 
     .proiect-description {
