@@ -97,7 +97,6 @@ const Drawing = () => {
               Load
             </button>
           </div>
-
           <label>
             Marime:
             <input
@@ -108,7 +107,6 @@ const Drawing = () => {
               }}
             />
           </label>
-
           <label>
             Raza:
             <input
@@ -117,7 +115,6 @@ const Drawing = () => {
               onChange={e => setLazyRadius(parseInt(e.target.value, 10))}
             />
           </label>
-
           <div className="changeColor-container">
             <button
               className="changeColor-btn"
@@ -189,10 +186,11 @@ const Drawing = () => {
             onChange={handleOnChange}
             onSubmit={handleSubmit}
           />
+
           <CanvasDraw
             ref={CanvasDraw => (saveableCanvas = CanvasDraw)}
             brushColor={brushColor}
-            hideGrid={false}
+            hideGrid={true}
             hideInterface={true}
             brushRadius={brushRadius}
             lazyRadius={lazyRadius}
@@ -205,17 +203,14 @@ const Drawing = () => {
               let canvas = saveableCanvas.canvasContainer.children[1]
               let baseCanvas = saveableCanvas.canvasContainer.children[3]
               let canvasContext = baseCanvas.getContext("2d")
-              canvasContext.drawImage(
-                saveableCanvas.canvasContainer.children[1],
-                0,
-                0
-              )
+              canvasContext.drawImage(canvas, 0, 0)
               canvasContext.globalCompositeOperation = "destination-over"
               canvasContext.fillStyle = "white"
               canvasContext.fillRect(0, 0, canvas.width, canvas.height)
               let dataURL = baseCanvas.toDataURL("image/jpeg")
               setImage(dataURL)
               setModalShow(true)
+              canvasContext.clearRect(0, 0, canvas.width, canvas.height)
             }}
           >
             Trimite schita
