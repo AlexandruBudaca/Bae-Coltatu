@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Location } from "@reach/router"
 import Navbar from "./navbar"
 
 const Layout = ({ children }) => {
-  const [showNavbar, setShowNavbar] = useState(false)
+  // const [showNavbar, setShowNavbar] = useState(false)
 
-  useEffect(() => {
-    const time = setTimeout(() => {
-      setShowNavbar(true)
-    }, 500)
-    return () => clearTimeout(time)
-  })
+  // useEffect(() => {
+  //   const time = setTimeout(() => {
+  //     setShowNavbar(true)
+  //   }, 500)
+  //   return () => clearTimeout(time)
+  // })
 
   return (
     <>
-      {showNavbar && (
-        <Location>{({ location }) => <Navbar location={location} />}</Location>
-      )}
+      <Location>{({ location }) => <Navbar location={location} />}</Location>
 
       <div>
         <main>{children}</main>

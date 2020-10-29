@@ -63,7 +63,7 @@ const MyNavbar = ({ location }) => {
             Showroom
           </Link>
           <Link
-            to="/page-2/"
+            to="/draw/"
             activeStyle={{ color: "black" }}
             className={location.pathname === rootPath ? "location-color" : null}
           >

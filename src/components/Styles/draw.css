@@ -1,0 +1,120 @@
+.canvas {
+    border: 2px solid yellow;
+    width: 100%!important;
+    height: 300px !important;
+}
+
+.draw-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+}
+.sendDraw-btn {
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 20px;
+    color: black;
+    background-color: yellow;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.sendDraw-btn:hover {
+    color: yellow;
+    background-color: black;
+    border: 1px solid yellow;
+}
+.sendDraw-btn:focus {
+    outline: 0;
+}
+.sendDraw-btn:active {
+    outline: none;
+    border: none;
+}
+.clear-btns {
+    padding: 10px;
+}
+.clear-btns button{
+    margin-right: 10px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+.clear-btns button:hover {
+    color: yellow;
+    background-color: black;
+    border: 1px solid yellow;
+}
+.clear-btns button:focus {
+ outline: 0;
+ color: black;
+    background-color: yellow;
+    border: 1px solid black;
+}
+.clear-btns button:active {
+    outline: none;
+    border: none;
+}
+.changeColor-btn {
+     margin-left: 10px;
+     background-color: yellow;
+     border: 1px solid black;
+}
+.changeColor-btn:hover {
+    color: yellow;
+    background-color: black;
+    border: 1px solid yellow;
+}
+.changeColor-btn:focus {
+  outline: 0;
+  color: black;
+   background-color: yellow;
+   border: 1px solid black;
+}
+.changeColor-btn:active {
+    outline: none;
+    border: none;
+}
+.changeColor-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+ flex-wrap: wrap;
+}
+.draw-row {
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .canvas {
+        height: 400px !important;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .canvas {
+        height: 500px !important;
+    }
+
+    .draw-row {
+        width: 80%;
+    }
+}
+@media only screen and (min-width: 1360px) {
+    .canvas {
+        height: 500px !important;
+    }
+
+    .draw-row {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .canvas {
+        height: 500px !important;
+    }
+    
+}
