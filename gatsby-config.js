@@ -43,8 +43,8 @@ module.exports = {
           port: 27017,
         },
         auth: {
-          user: `${process.env.USER}`,
-          password: `${process.env.KEY}`,
+          user: `${process.env.MONGO_USER}`,
+          password: `${process.env.MONGO_KEY}`,
         },
         extraParams: {
           replicaSet: "atlas-nq7h79-shard-0",
