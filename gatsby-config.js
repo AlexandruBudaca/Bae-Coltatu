@@ -1,3 +1,9 @@
+const activeEnv = process.env.NODE_ENV || "development"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `BAE`,
@@ -37,8 +43,8 @@ module.exports = {
           port: 27017,
         },
         auth: {
-          user: "AlexandruBudaca",
-          password: "Selet10!",
+          user: `${process.env.USER}`,
+          password: `${process.env.KEY}`,
         },
         extraParams: {
           replicaSet: "atlas-nq7h79-shard-0",
@@ -49,9 +55,5 @@ module.exports = {
         preserveObjectIds: true,
       },
     },
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

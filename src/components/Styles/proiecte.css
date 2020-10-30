@@ -23,7 +23,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 83.5%;
+    height: 80.5%;
     width: 92.5%;
     transition: .5s ease;
     background-color: rgba(0, 0, 0, 0.623);
@@ -131,9 +131,7 @@
         height: 500px;
         width: 1000px;
     }
-    .col-projects img {
-        height: 250px;
-    }
+
 
      
 }
