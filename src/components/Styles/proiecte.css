@@ -16,15 +16,52 @@
     width: 100%;
     margin-top: 50px;
 }
+.overlay {
+    position: absolute;
+    top: 10;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 83.5%;
+    width: 92.5%;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.623);
+    margin-left: 14px;
+}
+.overlayText-link{
+    color: rgb(255, 255, 209);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;
+    
+}
+.overlayText-link:hover {
+    color: rgb(255, 255, 32);
+    text-decoration: none;
+}
 .col-projects {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
 }
-.col-projects img{
-   height: 240px;
+.col-projects:hover .overlay {
+    /* background-color: black; */
+    opacity: 1;
 }
+
+.col-projects img{
+   height: 200px;
+}
+
 .singleProiect-container {
     display: flex;
     justify-content: flex-start;
@@ -67,18 +104,18 @@
 @media only screen and (min-width: 1024px) {
     .proiecte-row {
         width: 90%;
-           margin-top: 0px;
+        margin-top: 0px;
     }
 
     .proiect-description {
         margin-left: 30px;
     }
-       .singleProiect-container {
-           margin-top: 50px;
-           margin-right: 5rem;
-           height: 500px;
-           width: 800px;
-       }
+    .singleProiect-container {
+        margin-top: 50px;
+        margin-right: 5rem;
+        height: 500px;
+        width: 800px;
+    }
 
 }
 @media only screen and (min-width: 1366px) {
@@ -88,13 +125,16 @@
      .proiect-description {
          margin-left: 50px;
      }
-       .singleProiect-container {
-           margin-top: 10px;
-           margin-right: 5rem;
-           height: 500px;
-           width: 1000px;
-       }
-   
+    .singleProiect-container {
+        margin-top: 10px;
+        margin-right: 5rem;
+        height: 500px;
+        width: 1000px;
+    }
+    .col-projects img {
+        height: 250px;
+    }
+
      
 }
 @media only screen and (min-width: 1660px) {

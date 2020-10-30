@@ -191,7 +191,7 @@ const Drawing = () => {
             ref={CanvasDraw => (saveableCanvas = CanvasDraw)}
             brushColor={brushColor}
             hideGrid={true}
-            hideInterface={true}
+            hideInterface={false}
             brushRadius={brushRadius}
             lazyRadius={lazyRadius}
             style={{ backgroundColor: "white" }}
