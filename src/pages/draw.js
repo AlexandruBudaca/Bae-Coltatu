@@ -6,14 +6,12 @@ import { CompactPicker } from "react-color"
 import { Container, Row } from "react-bootstrap"
 import Modal from "react-bootstrap/Modal"
 import { MyVerticallyCenteredModal, fetchFromServer } from "../utils/functions"
-// import wb from "../assets/whiteBackground.jpg"
 
 import "../components/Styles/draw.css"
 
 const Drawing = () => {
   const [image, setImage] = useState("")
   const [brushRadius, setBrushRadius] = useState(5)
-  const [lazyRadius, setLazyRadius] = useState(5)
   const [brushColor, setBrushColor] = useState("black")
   const [modalShow, setModalShow] = useState(false)
   const [newEmail, setNewEmail] = useState({
@@ -97,40 +95,36 @@ const Drawing = () => {
               Load
             </button>
           </div>
-          <label>
-            Marime:
-            <input
-              type="number"
-              value={brushRadius}
-              onChange={e => {
-                setBrushRadius(parseInt(e.target.value, 10))
-              }}
-            />
-          </label>
-          <label>
-            Raza:
-            <input
-              type="number"
-              value={lazyRadius}
-              onChange={e => setLazyRadius(parseInt(e.target.value, 10))}
-            />
-          </label>
+
+          <select
+            className="marime"
+            onChange={e => {
+              setBrushRadius(parseInt(e.target.value, 10))
+            }}
+          >
+            <option selected="true" disabled="disabled">
+              Marime:
+            </option>
+            <option value="2">Mica</option>
+            <option value="8">Medie</option>
+            <option value="15">Mare</option>
+          </select>
+
           <div className="changeColor-container">
             <button
+              style={{
+                backgroundColor: brushColor,
+                width: "25px",
+                height: "25px",
+                marginLeft: "10px",
+                marginRight: "10px",
+                cursor: "pointer",
+              }}
               className="changeColor-btn"
               onClick={() => setChangeColor(!changeColor)}
             >
-              Schimba culoarea
+              {""}
             </button>
-            <div
-              style={{
-                backgroundColor: brushColor,
-                width: "20px",
-                height: "20px",
-                marginLeft: "10px",
-                marginRight: "10px",
-              }}
-            ></div>
             {changeColor && (
               <CompactPicker
                 onChangeComplete={color => {
@@ -141,37 +135,7 @@ const Drawing = () => {
               />
             )}
           </div>
-          {/* <div>
-        <input
-          type="file"
-          onChange={function (e) {
-            let img = new Image();
-            img.onload = function () {
-              saveableCanvas.canvasContainer.children[3]
-                .getContext("2d")
-                .drawImage(img, 0, 0);
-              saveableCanvas.drawImage();
-            };
-            img.src = URL.createObjectURL(e.target.files[0]);
-          }}
-        />
-      </div>
-      <div>
-        <button
-          onClick={() => {
-            let img = new Image();
-            img.onload = function () {
-              saveableCanvas.canvasContainer.children[3]
-                .getContext("2d")
-                .drawImage(img, 0, 0);
-            };
 
-            img.src = wb;
-          }}
-        >
-          delete image
-        </button>
-      </div> */}
           <Modal show={postShow} onHide={handleClose}>
             <Modal.Body>{messageModal}</Modal.Body>
             <Modal.Footer>
@@ -193,7 +157,7 @@ const Drawing = () => {
             hideGrid={true}
             hideInterface={false}
             brushRadius={brushRadius}
-            lazyRadius={lazyRadius}
+            lazyRadius="5"
             style={{ backgroundColor: "white" }}
             className="canvas"
           />

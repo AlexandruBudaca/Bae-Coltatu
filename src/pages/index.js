@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -6,25 +6,70 @@ import SEO from "../components/seo"
 import Carousel from "react-bootstrap/Carousel"
 import "../components/Styles/index.css"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
+import { TweenMax } from "gsap"
+import logo from "../images/logoColtatu.png"
 
-    <Carousel pause={false} interval={2500} indicators={false}>
-      {data.homeCarousel.edges.map(images => (
-        <Carousel.Item key={images.node.id}>
-          <Img
-            loading="eager"
-            className="d-block w-100"
-            fluid={images.node.childImageSharp.fluid}
-            alt={images.node.base}
+const IndexPage = ({ data }) => {
+  const intro = useRef(null)
+  const hide = useRef(null)
+  const logoImg = useRef(null)
+  const slider = useRef(null)
+  const [showHome, setShowHome] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowHome(true)
+    }, 2300)
+
+    TweenMax.fromTo(logoImg.current, 1.5, { y: `100%` }, { y: `0%` })
+    TweenMax.fromTo(slider.current, 1.5, { y: `100%` }, { y: `-100%` }).delay(
+      2.0
+    )
+    TweenMax.fromTo(intro.current, 1, { y: `0%` }, { y: `-100%` }).delay(2.5)
+  }, [])
+
+  return (
+    <>
+      <div className="intro" ref={intro}>
+        <div className="hide" ref={hide}>
+          <img
+            src={logo}
+            alt="intro_logo"
+            ref={logoImg}
+            style={{
+              width: "250px",
+              height: "250px",
+            }}
           />
-        </Carousel.Item>
-      ))}
-    </Carousel>
-    <div className="carousel-container"> </div>
-  </Layout>
-)
+        </div>
+      </div>
+      <div
+        className="slider"
+        ref={slider}
+        style={{ transform: `translateY(100%)` }}
+      ></div>
+      {showHome && (
+        <Layout>
+          <SEO title="Home" />
+
+          <Carousel pause={false} interval={3000} indicators={false}>
+            {data.homeCarousel.edges.map(images => (
+              <Carousel.Item key={images.node.id}>
+                <Img
+                  loading="eager"
+                  className="d-block w-100"
+                  fluid={images.node.childImageSharp.fluid}
+                  alt={images.node.base}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <div className="carousel-container"> </div>
+        </Layout>
+      )}
+    </>
+  )
+}
 
 export default IndexPage
 
