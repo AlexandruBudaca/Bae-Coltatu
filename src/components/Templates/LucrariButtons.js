@@ -1,7 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { Link } from "gatsby"
-
 import "../Styles/LucrariButtons.css"
 
 const LucrariButtons = () => {
