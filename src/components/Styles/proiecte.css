@@ -23,28 +23,28 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80.5%;
-    width: 92.5%;
+    height: 25%;
+    width: 75%;
     transition: .5s ease;
-    background-color: rgba(0, 0, 0, 0.623);
+    background-color: rgba(255, 255, 255);
     margin-left: 14px;
+    cursor: pointer;
 }
 .overlayText-link{
-    color: rgb(255, 255, 209);
-    font-size: 20px;
+    color: rgb(80, 80, 80);
+    font-size: 17px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
     text-decoration: none;
-    
+   
 }
 
 .overlayText-link:hover {
-    color: rgb(255, 255, 32);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 .col-projects {
@@ -54,17 +54,26 @@
     align-items: flex-start;
     flex-direction: column;
 }
-.col-projects:hover .overlay {
-    /* background-color: black; */
+.col-projects:hover .overlay,
+.col-projects:focus .overlay {
     opacity: 1;
+    transform: scale(1.05);
+    transition: all 1s;
 }
 
-.col-projects img{
+.col-projects:hover,
+.col-projects:focus {
+    transform: scale(1.05);
+     transition: all 0.5s;
+
+}
+
+.col-projects .proiecteImg{
    height: 200px;
 }
 
 .singleProiect-container {
-    display: flex;
+
     justify-content: flex-start;
     align-items: center;
     margin-top: 100px;

@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react"
-import ProjectsTemplate from "./Templates/ProjectsTemplate"
+import React from "react"
+import ProjectsTemplate from "../components/Templates/ProjectsTemplate"
+
 import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { Row } from "react-bootstrap"
 
 const Proiecte = () => {
-  const [showImages, setShowImages] = useState(false)
-  useEffect(() => {
-    setTimeout(() => {
-      setShowImages(true)
-    }, 500)
-  })
   return (
     <StaticQuery
       query={graphql`
@@ -26,15 +20,9 @@ const Proiecte = () => {
           }
         }
       `}
-      render={data =>
-        showImages ? (
-          <ProjectsTemplate myData={data.allMongodbColtatuProiecte.edges} />
-        ) : (
-          <Row>
-            <h4>Loading</h4>
-          </Row>
-        )
-      }
+      render={data => (
+        <ProjectsTemplate myData={data.allMongodbColtatuProiecte.edges} />
+      )}
     />
   )
 }

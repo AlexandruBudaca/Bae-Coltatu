@@ -101,6 +101,9 @@ const Drawing = () => {
             onChange={e => {
               setBrushRadius(parseInt(e.target.value, 10))
             }}
+            onBlur={e => {
+              setBrushRadius(parseInt(e.target.value, 10))
+            }}
           >
             <option selected="true" disabled="disabled">
               Marime:

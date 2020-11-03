@@ -3,7 +3,9 @@ import { graphql } from "gatsby"
 import SingleTemplate from "./SingleTemplate"
 import "../Styles/proiecte.css"
 const SingleConceptTemplate = ({ data }) => {
-  return <SingleTemplate myData={data.mongodbColtatuConcepte} />
+  return (
+    <SingleTemplate myData={data.mongodbColtatuConcepte} back={"/concepte/"} />
+  )
 }
 
 export default SingleConceptTemplate

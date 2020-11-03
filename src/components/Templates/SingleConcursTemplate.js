@@ -4,7 +4,12 @@ import SingleTemplate from "./SingleTemplate"
 import "../Styles/proiecte.css"
 
 const SingleConcursTemplate = ({ data }) => {
-  return <SingleTemplate myData={data.mongodbColtatuConcursuri} />
+  return (
+    <SingleTemplate
+      myData={data.mongodbColtatuConcursuri}
+      back={"/concursuri/"}
+    />
+  )
 }
 
 export default SingleConcursTemplate
