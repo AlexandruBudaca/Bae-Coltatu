@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { Link } from "gatsby"
 
@@ -7,8 +7,16 @@ import logo from "../images/logoColtatu.png"
 import "./Styles/navbar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
+import { TweenMax } from "gsap"
+
 const MyNavbar = ({ location }) => {
   const rootPath = `${__PATH_PREFIX__}/`
+
+  useEffect(() => {
+    TweenMax.fromTo("#responsive-navbar-nav", 1.5, { x: `-100%` }, { x: `0%` })
+    TweenMax.fromTo(".navbar-brand", 1.5, { y: `-100%` }, { y: `0%` })
+    TweenMax.fromTo(".navbar-toggler", 2, { y: `-100%` }, { y: `0%` })
+  })
 
   return (
     <Navbar
@@ -16,6 +24,7 @@ const MyNavbar = ({ location }) => {
       expand="lg"
       fixed="top"
       className={location.pathname === "/" ? "background-home" : null}
+      // id={location.pathname === "/" ? "navbar" : "navbarMobile"}
     >
       <Navbar.Brand href="/">
         <img
@@ -49,7 +58,7 @@ const MyNavbar = ({ location }) => {
             Birou
           </Link>
           <Link
-            to="/lucrari/"
+            to="/proiecte/"
             activeStyle={{ color: "black" }}
             className={location.pathname === rootPath ? "location-color" : null}
           >
