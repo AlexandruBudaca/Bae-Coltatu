@@ -104,8 +104,9 @@ const Drawing = () => {
             onBlur={e => {
               setBrushRadius(parseInt(e.target.value, 10))
             }}
+            defaultValue="Marime:"
           >
-            <option selected="true" disabled="disabled">
+            <option value="Marime:" disabled="disabled">
               Marime:
             </option>
             <option value="2">Mica</option>
@@ -159,8 +160,8 @@ const Drawing = () => {
             brushColor={brushColor}
             hideGrid={true}
             hideInterface={false}
+            lazyRadius={5}
             brushRadius={brushRadius}
-            lazyRadius="5"
             style={{ backgroundColor: "white" }}
             className="canvas"
           />

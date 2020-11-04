@@ -68,7 +68,7 @@ export function MyVerticallyCenteredModal(props) {
 export function fetchFromServer(url, data, method) {
   const response = fetch(url, {
     method: method,
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
