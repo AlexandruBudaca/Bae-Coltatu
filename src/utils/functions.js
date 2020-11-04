@@ -27,24 +27,6 @@ export function MyVerticallyCenteredModal(props) {
               required
             />
           </Form.Group>
-          {/* <Form.Group controlId="formBasicSubject">
-            <Form.Label>Subject</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Subject"
-              name="subject"
-              onChange={props.handleOnChange}
-            />
-          </Form.Group> */}
-          {/* <Form.Group controlId="formBasicToEmail">
-            <Form.Label>Send to another email</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter email"
-              name="toEmail"
-              onChange={props.handleOnChange}
-            />
-          </Form.Group> */}
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control

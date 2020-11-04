@@ -6,27 +6,17 @@
     width: 100%;
     max-height: 100vh;
 }
-
+/* 
 .d-block {
     width: 100%;
     min-height: 100vh;
     object-fit: cover;
-}
+} */
 
 .carousel-control-next,
 .carousel-control-prev {
     display: none !important;
 }
-
-/* .carousel-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.281);
-    height: 100vh;
-    z-index: 1000;
-} */
 
 
 .intro {

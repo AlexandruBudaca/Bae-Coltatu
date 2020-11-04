@@ -142,9 +142,9 @@ const Drawing = () => {
           <Modal show={postShow} onHide={handleClose}>
             <Modal.Body>{messageModal}</Modal.Body>
             <Modal.Footer>
-              <burrin className="sendDraw-btn" onClick={handleClose}>
+              <button className="sendDraw-btn" onClick={handleClose}>
                 Close
-              </burrin>
+              </button>
             </Modal.Footer>
           </Modal>
           <MyVerticallyCenteredModal
