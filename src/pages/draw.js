@@ -43,6 +43,7 @@ const Drawing = () => {
       newEmail,
       "POST"
     ).then(response => {
+      console.log(response.status)
       if (response.status === 200) {
         setShowPost(true)
         setMessageModal("Mesajul a fost trimis cu success!")

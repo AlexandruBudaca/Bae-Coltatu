@@ -16,7 +16,7 @@ const MyNavbar = ({ location }) => {
     TweenMax.fromTo("#responsive-navbar-nav", 1.5, { x: `-100%` }, { x: `0%` })
     TweenMax.fromTo(".navbar-brand", 1.5, { y: `-100%` }, { y: `0%` })
     TweenMax.fromTo(".navbar-toggler", 2, { y: `-100%` }, { y: `0%` })
-  })
+  }, [])
 
   return (
     <Navbar

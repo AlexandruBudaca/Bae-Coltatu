@@ -21,6 +21,7 @@ const Contact = () => {
       ...newEmail,
       [e.target.name]: e.target.value,
     }
+
     setNewEmail(newEmailUser)
   }
   const handleSubmit = e => {
@@ -38,6 +39,7 @@ const Contact = () => {
         setMessageModal("Opps ceva nu e bine!")
       }
     })
+    e.target.reset()
   }
 
   return (
