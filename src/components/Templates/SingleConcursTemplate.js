@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SingleTemplate from "./SingleTemplate"
+
 import "../Styles/proiecte.css"
 
-const SingleConcursTemplate = ({ data }) => {
+const SingleConcursTemplate = data => {
   return (
     <SingleTemplate
       myData={data.mongodbColtatuConcursuri}
-      back={"/concursuri/"}
+      back="/concursuri/"
     />
   )
 }

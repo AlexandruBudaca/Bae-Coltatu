@@ -24,6 +24,7 @@ const MyNavbar = ({ location }) => {
       expand="lg"
       fixed="top"
       className={location.pathname === "/" ? "background-home" : null}
+
       // id={location.pathname === "/" ? "navbar" : "navbarMobile"}
     >
       <Navbar.Brand href="/">
