@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 const SingleProjectTemplate = ({ data }) => {
   const myData = data.mongodbColtatuProiecte.titlu
@@ -11,3 +12,10 @@ const SingleProjectTemplate = ({ data }) => {
 }
 
 export default SingleProjectTemplate
+
+SingleProjectTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any),
+  mongodbColtatuProiecte: PropTypes.objectOf(PropTypes.any),
+  titlu: PropTypes.string,
+  description: PropTypes.string,
+}

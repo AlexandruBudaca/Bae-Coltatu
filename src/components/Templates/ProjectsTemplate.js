@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
+import PropTypes from "prop-types"
 import "../Styles/proiecte.css"
 
 import { TweenMax } from "gsap"
@@ -42,3 +43,8 @@ const ProjectTemplate = ({ myData }) => {
 }
 
 export default ProjectTemplate
+
+ProjectTemplate.propTypes = {
+  myData: PropTypes.objectOf(PropTypes.any),
+  map: PropTypes.arrayOf(PropTypes.any),
+}

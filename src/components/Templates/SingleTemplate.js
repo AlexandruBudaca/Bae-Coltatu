@@ -1,10 +1,11 @@
 import React from "react"
-import Layout from "../layout"
-import SEO from "../seo"
-import { Link } from "gatsby"
 
+import { Link } from "gatsby"
+import propTypes from "prop-types"
 import ImageGallery from "react-image-gallery"
 import { Container } from "react-bootstrap"
+import Layout from "../layout"
+import { SEO } from "../seo"
 import "../Styles/proiecte.css"
 
 const SingleTemplate = ({ myData, back }) => {
@@ -24,8 +25,7 @@ const SingleTemplate = ({ myData, back }) => {
                 thumbnail: link,
               }))}
             />
-
-            <div className="proiect-description"></div>
+            <div className="proiect-description" />
           </Container>
         </>
       )}
@@ -34,3 +34,10 @@ const SingleTemplate = ({ myData, back }) => {
 }
 
 export default SingleTemplate
+
+SingleTemplate.propTypes = {
+  myData: propTypes.objectOf(propTypes.any),
+  back: propTypes.string,
+  titlu: propTypes.string,
+  linkuri: propTypes.arrayOf(propTypes.any),
+}
