@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 import SingleTemplate from "./SingleTemplate"
 
 import "../Styles/proiecte.css"
 
-const SingleConcursTemplate = data => {
+const SingleConcursTemplate = ({ data }) => {
   return (
     <SingleTemplate
       myData={data.mongodbColtatuConcursuri}
@@ -25,3 +26,7 @@ export const pageQuery = graphql`
     }
   }
 `
+SingleConcursTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes),
+  mongodbColtatuConcursuri: PropTypes.objectOf(PropTypes),
+}

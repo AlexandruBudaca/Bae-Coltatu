@@ -5,7 +5,7 @@ import SingleTemplate from "./SingleTemplate"
 
 import "../Styles/proiecte.css"
 
-const SingleProiectTemplate = data => {
+const SingleProiectTemplate = ({ data }) => {
   return (
     <SingleTemplate myData={data.mongodbColtatuProiecte} back="/proiecte/" />
   )
