@@ -54,7 +54,7 @@ const Despre = () => (
           </Tabs>
         </Col>
       </Row>
-      <div className="despre-rectangle"></div>
+      <div className="despre-rectangle" />
     </Container>
   </Layout>
 )

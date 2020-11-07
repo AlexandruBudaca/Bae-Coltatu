@@ -5,7 +5,7 @@ import propTypes from "prop-types"
 import ImageGallery from "react-image-gallery"
 import { Container } from "react-bootstrap"
 import Layout from "../layout"
-import { SEO } from "../seo"
+import SEO from "../seo"
 import "../Styles/proiecte.css"
 
 const SingleTemplate = ({ myData, back }) => {

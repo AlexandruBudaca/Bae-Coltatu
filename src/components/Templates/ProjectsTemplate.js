@@ -9,7 +9,6 @@ import { TweenMax } from "gsap"
 const ProjectTemplate = ({ myData }) => {
   useEffect(() => {
     TweenMax.fromTo("#homeImg", 1.5, { y: `100%` }, { y: `0%` })
-    TweenMax.fromTo("#homeImg", 2, { autoAlpha: 0 }, { autoAlpha: 1 })
   })
 
   return (

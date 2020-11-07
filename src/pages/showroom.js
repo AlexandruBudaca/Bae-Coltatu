@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Modal from "react-bootstrap/Modal"
 import { TweenMax } from "gsap"
 import { Container, Col } from "react-bootstrap"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import "../components/Styles/showroom.css"
 
 const Showroom = ({ data }) => {
@@ -14,8 +15,7 @@ const Showroom = ({ data }) => {
   const handleClose = () => setShowImageModal(false)
 
   useEffect(() => {
-    // TweenMax.fromTo(".showroom-col", 1.5, { y: `100%` }, { y: `0%` })
-    TweenMax.fromTo(".showroom-col", 2, { autoAlpha: 0 }, { autoAlpha: 1 })
+    TweenMax.fromTo(".showroom-col", 1.5, { y: `100%` }, { y: `0%` })
   })
 
   return (
@@ -45,6 +45,7 @@ const Showroom = ({ data }) => {
             <button
               onClick={() => setShowImageModal(false)}
               className="showroom-btn"
+              type="button"
             >
               X
             </button>
@@ -85,3 +86,10 @@ export const pageQuery = graphql`
     }
   }
 `
+
+Showroom.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any),
+  Showroom: PropTypes.objectOf(PropTypes.any),
+  edges: PropTypes.arrayOf(PropTypes.any),
+  map: PropTypes.arrayOf(PropTypes.string),
+}

@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import CanvasDraw from "react-canvas-draw"
 import { CompactPicker } from "react-color"
 import { Container, Row } from "react-bootstrap"
 import Modal from "react-bootstrap/Modal"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { MyVerticallyCenteredModal, fetchFromServer } from "../utils/functions"
 
 import "../components/Styles/draw.css"
@@ -43,7 +43,6 @@ const Drawing = () => {
       newEmail,
       "POST"
     ).then(response => {
-      console.log(response.status)
       if (response.status === 200) {
         setShowPost(true)
         setMessageModal("Mesajul a fost trimis cu success!")
@@ -66,6 +65,7 @@ const Drawing = () => {
               onClick={() => {
                 saveableCanvas.clear()
               }}
+              type="button"
             >
               Clear
             </button>
@@ -73,6 +73,7 @@ const Drawing = () => {
               onClick={() => {
                 saveableCanvas.undo()
               }}
+              type="button"
             >
               Undo
             </button>
@@ -83,6 +84,7 @@ const Drawing = () => {
                   saveableCanvas.getSaveData()
                 )
               }}
+              type="button"
             >
               Save
             </button>
@@ -92,6 +94,7 @@ const Drawing = () => {
                   localStorage.getItem("savedDrawing")
                 )
               }}
+              type="button"
             >
               Load
             </button>
@@ -127,8 +130,9 @@ const Drawing = () => {
               }}
               className="changeColor-btn"
               onClick={() => setChangeColor(!changeColor)}
+              type="button"
             >
-              {""}
+              {" "}
             </button>
             {changeColor && (
               <CompactPicker
@@ -144,23 +148,31 @@ const Drawing = () => {
           <Modal show={postShow} onHide={handleClose}>
             <Modal.Body>{messageModal}</Modal.Body>
             <Modal.Footer>
-              <button className="sendDraw-btn" onClick={handleClose}>
+              <button
+                className="sendDraw-btn"
+                onClick={handleClose}
+                type="button"
+              >
                 Close
               </button>
             </Modal.Footer>
           </Modal>
           <MyVerticallyCenteredModal
             show={modalShow}
-            onHide={() => setModalShow(false)}
+            onHide={() => {
+              setModalShow(false)
+            }}
             onChange={handleOnChange}
             onSubmit={handleSubmit}
           />
 
           <CanvasDraw
-            ref={CanvasDraw => (saveableCanvas = CanvasDraw)}
+            ref={canvasD => {
+              saveableCanvas = canvasD
+            }}
             brushColor={brushColor}
-            hideGrid={true}
-            hideInterface={false}
+            hideGrid="true"
+            hideInterface="false"
             lazyRadius={5}
             brushRadius={brushRadius}
             style={{ backgroundColor: "white" }}
@@ -168,19 +180,20 @@ const Drawing = () => {
           />
           <button
             className="sendDraw-btn"
-            onClick={function () {
-              let canvas = saveableCanvas.canvasContainer.children[1]
-              let baseCanvas = saveableCanvas.canvasContainer.children[3]
-              let canvasContext = baseCanvas.getContext("2d")
+            onClick={() => {
+              const canvas = saveableCanvas.canvasContainer.children[1]
+              const baseCanvas = saveableCanvas.canvasContainer.children[3]
+              const canvasContext = baseCanvas.getContext("2d")
               canvasContext.drawImage(canvas, 0, 0)
               canvasContext.globalCompositeOperation = "destination-over"
               canvasContext.fillStyle = "white"
               canvasContext.fillRect(0, 0, canvas.width, canvas.height)
-              let dataURL = baseCanvas.toDataURL("image/jpeg")
+              const dataURL = baseCanvas.toDataURL("image/jpeg")
               setImage(dataURL)
               setModalShow(true)
               canvasContext.clearRect(0, 0, canvas.width, canvas.height)
             }}
+            type="button"
           >
             Trimite schita
           </button>

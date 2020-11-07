@@ -1,11 +1,18 @@
 {
   "root": true,
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "browser": true,
+    "es6": true
+  },
   "extends": ["airbnb", "plugin:jest/recommended", "plugin:prettier/recommended"],
   "settings": {
     "import/core-modules": ["gatsby"]
   },
   "globals": {
-    "graphql": true
+    "graphql": true,
+    "__PATH_PREFIX__": true
   },
   "rules": {
     "jsx-a11y/anchor-is-valid": [
@@ -20,6 +27,14 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "react/require-default-props": [0, { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": false }],
-    "import/no-named-as-default": 2
+    "import/no-named-as-default": 0,
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": 0,
+    "import/no-named-as-default-member": 0,
+    "import/no-useless-path-segments": "error",
+    "react/no-unescaped-entities": 0,
+    "dot-notation": 0,
+     "react/jsx-props-no-spreading": "off",
+     "object-shorthand": 0
   }
 }
