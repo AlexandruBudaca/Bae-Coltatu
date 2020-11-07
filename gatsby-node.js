@@ -1,5 +1,5 @@
 const path = require(`path`)
-const { createRemoteFileNode } = require("gatsby-source-filesystem")
+const projects = require(`./src/assets/projects.json`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -71,4 +71,27 @@ exports.createPages = async ({ actions, graphql }) => {
       })
     })
   })
+}
+
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const { createNode } = actions
+
+  const promises = projects.map(project =>
+    createNode({
+      id: createNodeId(`customNode-${project._id.$oid}`),
+      parent: null,
+      children: [],
+      title: project.titlu,
+      linkuri: project.linkuri,
+      internal: {
+        type: "CustomNode",
+        contentDigest: createContentDigest(projects),
+      },
+    })
+  )
+  await Promise.all(promises)
 }

@@ -33,7 +33,6 @@ const Showroom = ({ data }) => {
             }}
           >
             <Img
-              loading="eager"
               fluid={images.node.childImageSharp.fluid}
               alt={images.node.base}
             />
@@ -52,7 +51,6 @@ const Showroom = ({ data }) => {
           </Modal.Body>
           {showImageModal && (
             <Img
-              loading="eager"
               fluid={image.node.childImageSharp.fluid}
               alt={image.node.base}
               className="image-modal"
