@@ -1,5 +1,7 @@
 const path = require(`path`)
 const projects = require(`./src/assets/projects.json`)
+const concepte = require(`./src/assets/Concepte.json`)
+const concursuri = require(`./src/assets/Concursuri.json`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -41,7 +43,6 @@ exports.createPages = async ({ actions, graphql }) => {
     if (result.errors) {
       Promise.reject(result.errors)
     }
-
     result.data.concepte.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
@@ -51,7 +52,6 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-
     result.data.concursuri.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
@@ -80,7 +80,7 @@ exports.sourceNodes = async ({
 }) => {
   const { createNode } = actions
 
-  const promises = projects.map(project =>
+  const promisesProjects = projects.map(project =>
     createNode({
       id: createNodeId(`customNode-${project._id.$oid}`),
       parent: null,
@@ -88,10 +88,37 @@ exports.sourceNodes = async ({
       title: project.titlu,
       linkuri: project.linkuri,
       internal: {
-        type: "CustomNode",
+        type: "CustomNodeProjects",
         contentDigest: createContentDigest(projects),
       },
     })
   )
-  await Promise.all(promises)
+  const promisesConcepte = concepte.map(project =>
+    createNode({
+      id: createNodeId(`customNode-${project._id.$oid}`),
+      parent: null,
+      children: [],
+      title: project.titlu,
+      linkuri: project.linkuri,
+      internal: {
+        type: "CustomNodeConcepte",
+        contentDigest: createContentDigest(concepte),
+      },
+    })
+  )
+  const promisesConcursuri = concursuri.map(project =>
+    createNode({
+      id: createNodeId(`customNode-${project._id.$oid}`),
+      parent: null,
+      children: [],
+      title: project.titlu,
+      linkuri: project.linkuri,
+      internal: {
+        type: "CustomNodeConcursuri",
+        contentDigest: createContentDigest(concursuri),
+      },
+    })
+  )
+
+  await Promise.all([promisesProjects, promisesConcepte, promisesConcursuri])
 }

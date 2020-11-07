@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "5f9059c90c8d6182c886bb3b"
+  },
+  "titlu": "Scoala Bucuresti Noi",
+  "linkuri": [
+    "https://lh3.googleusercontent.com/pw/ACtC-3fHC-4re_wYavQDEPAhfflXXzrmNIPtBsDD451ZAYZGI7P1H5qQkjb4Ho79DYCX_PQ1DxX1sWD4X0No3lMgzxeMqKcHmPUMUNeLvMuqu0-YJaELOsiKP1iAq6qSLZromULY0VXLLQG_i2fVjlotC-ty=w1682-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3c_6BxunRxFmVnpAjJ3h7OB7oB0XJMnTIzCwlYH3hvGMH3R2Z-Y9fXZzmLNxsvR8jrOBDM67Wsd1-8uqa4tzy3I9UJLtUh9jTsVi1z8nT90mK2DZzFfdKD-qz8hvlnSu5k-mVyATL4qSKsz6h71TgS3=w1682-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3dQj-lP-BN5pHh0PyLPrEMopBsqp0OpZM81Mrm9CKXtb89WAnqSZ4DQ-SLNF7K3zGsf5sofkrzNvw5Cesgd1WFiwvh2AgdzzPOz5oecpxwwoJ4ErZ95YcWQoJYZ8PXKIkZ-mn7Oaq924b-f4Fe29qS0=w1682-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3dUHkJFGUm7W5Wmt30qSjoqaZMUW8TccCAKSAQbuyk-Lv_PnUU3UXNY58jAR3Pko4WCkikVNgMJUvJ_r799Phlu8CSxaf7QlyTMLFLX6_SHvNCggbtiYEj44QwWqbZFz5Dls2cb7cMOpjoCgnj12jKT=w1682-h946-no?authuser=0"
+  ],
+  "description": "Ceva despre!"
+},{
+  "_id": {
+    "$oid": "5f931f7907211cc2bbf24134"
+  },
+  "titlu": "Locuinta Colectiva Timpuri Noi",
+  "linkuri": [
+    "https://lh3.googleusercontent.com/pw/ACtC-3eeUNe5vFhrB3hisJAc4AluBbJybEKhBmqlYqguB3YtleRY6TRPd3vejHtHM8XhMY1a-LMgeNoAzpSIYwmQqlNMZCQKqU5zdvVDq-61GVBj_ZDkh_dzLgL5v4AO8RxbldKO8EIuaJJe7l4ypoGGO3-x=w1682-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3c6NJOldJabnb7FJL2Jx-0gsSIzOziwfSlG_DxtYjMarr-DB9pP1b5MuXK81RGOp4idTr_aRSEpq6AblXXBFlxbaAhOIIkF6oIF-UrVdvmWpH14Y5HbM7VdzSRH3hVKtB3HxbZEB_6WK0GuTooTC0xN=w1682-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3fflMdAxqzNsO9QTMbgbEADeh5rX4LGJq0WR2L9lg14VY0BqpHWBcdri3_0-SFK879Bta4T1djSSZaX_QCZIJVhwKFZsDS-xI6moswSTJddaWEpVIUKib_Qq68TIUtEMRj67aLe2ywQ5hN28nnzaPzM=w670-h946-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3f-xc03q6P93XNnJi1DHLEX3jA8PvvvLg9R5nn376REcopae8G5My1OlRnqHek12JwHZb4CCES_hE67R546ayKzrTMGDEyVQBGGFyiqtcv6Kk6y_-MOgxhcwdG28gQQCRRCU-lPy4WD4VW9SNDnKA9C=w1679-h944-no?authuser=0"
+  ]
+}]

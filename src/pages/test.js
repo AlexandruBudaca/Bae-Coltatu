@@ -1,18 +1,17 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 
-const TestLocalImages = ({ data }) => {
+const TestLocalImages = () => {
   return (
     <Layout>
-      {console.log(data)}
-      <Img
+      {/* <Img
         fluid={
           data.allCustomNode.edges[0].node.localImages[0].childImageSharp.fluid
         }
         alt="foo"
-      />
+      /> */}
       {/* <img
         src={
           data.allCustomNode.edges[0].node.localImages[0].childImageSharp.fluid
@@ -23,22 +22,3 @@ const TestLocalImages = ({ data }) => {
   )
 }
 export default TestLocalImages
-
-export const pageQuery = graphql`
-  query {
-    allCustomNode {
-      edges {
-        node {
-          localImages {
-            childImageSharp {
-              id
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
