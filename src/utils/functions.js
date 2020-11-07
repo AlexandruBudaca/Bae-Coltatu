@@ -1,8 +1,12 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Modal, Form } from "react-bootstrap"
 import "../components/Styles/draw.css"
 
 export function MyVerticallyCenteredModal(props) {
+  const { handleOnChange } = props
+  const { handleSubmit } = props
+  const { onHide } = props
   return (
     <Modal
       {...props}
@@ -16,14 +20,14 @@ export function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={props.handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicName">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
               placeholder="Name"
               name="name"
-              onChange={props.handleOnChange}
+              onChange={handleOnChange}
               required
             />
           </Form.Group>
@@ -33,7 +37,7 @@ export function MyVerticallyCenteredModal(props) {
               type="email"
               placeholder="Email"
               name="email"
-              onChange={props.handleOnChange}
+              onChange={handleOnChange}
               required
             />
             <Form.Text className="text-muted">
@@ -47,7 +51,7 @@ export function MyVerticallyCenteredModal(props) {
               as="textarea"
               rows="3"
               name="message"
-              onChange={props.handleOnChange}
+              onChange={handleOnChange}
             />
           </Form.Group>
 
@@ -57,7 +61,7 @@ export function MyVerticallyCenteredModal(props) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <button className="sendDraw-btn" onClick={props.onHide}>
+        <button className="sendDraw-btn" onClick={onHide} type="button">
           Close
         </button>
       </Modal.Footer>
@@ -75,4 +79,10 @@ export function fetchFromServer(url, data, method) {
     body: JSON.stringify(data),
   })
   return resFetch
+}
+
+MyVerticallyCenteredModal.propTypes = {
+  handleOnChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  onHide: PropTypes.func,
 }

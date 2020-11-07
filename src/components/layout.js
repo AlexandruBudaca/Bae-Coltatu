@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import { Location } from "@reach/router"
 import Navbar from "./navbar"
 
@@ -42,7 +43,8 @@ const Layout = ({ children }) => {
                     marginLeft: `1rem`,
                   }}
                 >
-                  © {new Date().getFullYear()} BAE
+                  ©{new Date().getFullYear()}
+                  BAE
                 </p>
               )}
             </Location>
@@ -54,3 +56,7 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
+
+Layout.propTypes = {
+  children: PropTypes.objectOf(PropTypes.any),
+}

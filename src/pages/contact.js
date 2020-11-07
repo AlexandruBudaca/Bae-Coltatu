@@ -1,11 +1,13 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { fetchFromServer } from "../utils/functions"
 import Form from "react-bootstrap/Form"
 import { Container, Button } from "react-bootstrap"
 import Modal from "react-bootstrap/Modal"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { fetchFromServer } from "../utils/functions"
+
 import "../components/Styles/contact.css"
+
 const Contact = () => {
   const [postShow, setShowPost] = useState(false)
   const [messageModal, setMessageModal] = useState("")
@@ -83,12 +85,12 @@ const Contact = () => {
             Submit
           </Button>
         </Form>
-        <div className="contact-rectangle"></div>
+        <div className="contact-rectangle" />
       </Container>
       <Modal show={postShow} onHide={handleClose}>
         <Modal.Body>{messageModal}</Modal.Body>
         <Modal.Footer>
-          <button className="sendDraw-btn" onClick={handleClose}>
+          <button className="sendDraw-btn" onClick={handleClose} type="submit">
             Close
           </button>
         </Modal.Footer>

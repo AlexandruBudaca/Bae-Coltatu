@@ -1,7 +1,7 @@
 import React from "react"
-import ProjectsTemplate from "./Templates/ProjectsTemplate"
-import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { StaticQuery, graphql } from "gatsby"
+import ProjectsTemplate from "./Templates/ProjectsTemplate"
 
 const Concursuri = () => {
   return (
@@ -34,7 +34,7 @@ Concursuri.propTypes = {
       edges: PropTypes.shape({
         node: PropTypes.shape({
           title: PropTypes.string.isRequired,
-          linkuri: PropTypes.array.isRequired,
+          linkuri: PropTypes.arrayOf(PropTypes.any).isRequired,
           id: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,

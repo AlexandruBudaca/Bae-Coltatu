@@ -1,13 +1,12 @@
 import React, { useEffect } from "react"
-
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import { Navbar, Nav } from "react-bootstrap"
+import { TweenMax } from "gsap"
 import logo from "../images/logoColtatu.png"
 import "./Styles/navbar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-
-import { TweenMax } from "gsap"
 
 const MyNavbar = ({ location }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -24,7 +23,6 @@ const MyNavbar = ({ location }) => {
       expand="lg"
       fixed="top"
       className={location.pathname === "/" ? "background-home" : null}
-      // id={location.pathname === "/" ? "navbar" : "navbarMobile"}
     >
       <Navbar.Brand href="/">
         <img
@@ -36,9 +34,9 @@ const MyNavbar = ({ location }) => {
         />
       </Navbar.Brand>
       <Navbar.Toggle>
-        <div className="hamburger"></div>
-        <div className="hamburger"></div>
-        <div className="hamburger"></div>
+        <div className="hamburger" />
+        <div className="hamburger" />
+        <div className="hamburger" />
       </Navbar.Toggle>
 
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -91,3 +89,7 @@ const MyNavbar = ({ location }) => {
   )
 }
 export default MyNavbar
+
+MyNavbar.propTypes = {
+  location: PropTypes.objectOf(PropTypes.any),
+}

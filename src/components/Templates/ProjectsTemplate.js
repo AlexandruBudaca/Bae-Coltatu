@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
+import PropTypes from "prop-types"
 import "../Styles/proiecte.css"
 
 import { TweenMax } from "gsap"
@@ -8,7 +9,6 @@ import { TweenMax } from "gsap"
 const ProjectTemplate = ({ myData }) => {
   useEffect(() => {
     TweenMax.fromTo("#homeImg", 1.5, { y: `100%` }, { y: `0%` })
-    TweenMax.fromTo("#homeImg", 2, { autoAlpha: 0 }, { autoAlpha: 1 })
   })
 
   return (
@@ -42,3 +42,8 @@ const ProjectTemplate = ({ myData }) => {
 }
 
 export default ProjectTemplate
+
+ProjectTemplate.propTypes = {
+  myData: PropTypes.objectOf(PropTypes.any),
+  map: PropTypes.arrayOf(PropTypes.any),
+}

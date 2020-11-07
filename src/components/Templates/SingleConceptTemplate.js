@@ -1,10 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 import SingleTemplate from "./SingleTemplate"
+
 import "../Styles/proiecte.css"
+
 const SingleConceptTemplate = ({ data }) => {
   return (
-    <SingleTemplate myData={data.mongodbColtatuConcepte} back={"/concepte/"} />
+    <SingleTemplate myData={data.mongodbColtatuConcepte} back="/concepte/" />
   )
 }
 
@@ -20,3 +23,7 @@ export const pageQuery = graphql`
     }
   }
 `
+SingleConceptTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes),
+  mongodbColtatuConcepte: PropTypes.objectOf(PropTypes),
+}

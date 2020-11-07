@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import Carousel from "react-bootstrap/Carousel"
+import { TweenMax } from "gsap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Carousel from "react-bootstrap/Carousel"
+
 import "../components/Styles/index.css"
 
-import { TweenMax } from "gsap"
 import logo from "../images/logoColtatu.png"
 
 const IndexPage = ({ data }) => {
@@ -47,7 +49,7 @@ const IndexPage = ({ data }) => {
         className="slider"
         ref={slider}
         style={{ transform: `translateY(100%)` }}
-      ></div>
+      />
       {showHome && (
         <Layout>
           <SEO title="Home" />
@@ -96,3 +98,10 @@ export const pageQuery = graphql`
     }
   }
 `
+
+IndexPage.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any),
+  homeCarousel: PropTypes.objectOf(PropTypes.any),
+  edges: PropTypes.arrayOf(PropTypes.any),
+  map: PropTypes.arrayOf(PropTypes.any),
+}
