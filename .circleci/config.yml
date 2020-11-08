@@ -1,0 +1,54 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+jobs:
+  frontend_build:
+    docker:
+      - image: circleci/node:8.12.0
+    steps:
+      - checkout
+      - restore_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+           paths:
+              - ~/.npm
+              - ~/.cache
+      - run: npm run eslint
+      - run: npm run test 
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:8000'
+          background: true
+
+  # deploy_frontend:
+  #   docker:
+  #     - image: circleci/python
+  #   working_directory: ~/public
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #         at: ~/frontend/build
+  #     - run:
+  #         name: Install awscli
+  #         command: sudo pip install awscli
+  #     - s3deploy_production:
+  #         to: "over-the-line.uk"
+  #         cf_distribution_id: "E2N0RA4UHF7AR2"
+workflows:
+  version: 2
+
+  my_workflow:
+    jobs:
+      - frontend_build:
+          context: build
+      # - deploy_frontend:
+      #     context: deployments
+      #     requires:
+      #       - frontend_build
+      #       - deploy_backend
+          filters:
+            branches:
+              only:
+                - main
