@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-  
+
 jobs:
   frontend_build:
     docker:
@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/project
 
     steps:
-      - checkout
+      # - checkout
       - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
