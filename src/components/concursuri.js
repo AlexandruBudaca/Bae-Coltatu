@@ -8,19 +8,25 @@ const Concursuri = () => {
     <StaticQuery
       query={graphql`
         query {
-          allMongodbColtatuConcursuri {
+          allCustomNodeConcursuri {
             edges {
               node {
-                titlu
-                linkuri
+                title
                 id
+                localImages {
+                  childImageSharp {
+                    fluid(quality: 100, maxWidth: 3000) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
             }
           }
         }
       `}
       render={data => (
-        <ProjectsTemplate myData={data.allMongodbColtatuConcursuri.edges} />
+        <ProjectsTemplate myData={data.allCustomNodeConcursuri.edges} />
       )}
     />
   )
@@ -30,11 +36,10 @@ export default Concursuri
 
 Concursuri.propTypes = {
   data: PropTypes.shape({
-    allMongodbColtatuConcepte: PropTypes.shape({
+    allCustomNodeConcursuri: PropTypes.shape({
       edges: PropTypes.shape({
         node: PropTypes.shape({
           title: PropTypes.string.isRequired,
-          linkuri: PropTypes.arrayOf(PropTypes.any).isRequired,
           id: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,

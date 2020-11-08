@@ -17,21 +17,21 @@ exports.createPages = async ({ actions, graphql }) => {
   )
   return await graphql(`
     {
-      concepte: allMongodbColtatuConcepte {
+      concepteProjects: allCustomNodeConcepte {
         edges {
           node {
             id
           }
         }
       }
-      concursuri: allMongodbColtatuConcursuri {
+      concursuriProjects: allCustomNodeConcursuri {
         edges {
           node {
             id
           }
         }
       }
-      proiecte: allMongodbColtatuProiecte {
+      proiecteProjects: allCustomNodeProjects {
         edges {
           node {
             id
@@ -43,7 +43,7 @@ exports.createPages = async ({ actions, graphql }) => {
     if (result.errors) {
       Promise.reject(result.errors)
     }
-    result.data.concepte.edges.forEach(({ node }) => {
+    result.data.concepteProjects.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
         component: SingleConceptTemplate,
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-    result.data.concursuri.edges.forEach(({ node }) => {
+    result.data.concursuriProjects.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
         component: SingleConcursTemplate,
@@ -61,7 +61,7 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-    result.data.proiecte.edges.forEach(({ node }) => {
+    result.data.proiecteProjects.edges.forEach(({ node }) => {
       createPage({
         path: `/proiect${node.id}`,
         component: SingleProiectTemplate,

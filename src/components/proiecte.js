@@ -8,19 +8,25 @@ const Proiecte = () => {
     <StaticQuery
       query={graphql`
         query {
-          allMongodbColtatuProiecte {
+          allCustomNodeProjects {
             edges {
               node {
-                titlu
-                linkuri
+                title
                 id
+                localImages {
+                  childImageSharp {
+                    fluid(quality: 100, maxWidth: 3000) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
             }
           }
         }
       `}
       render={data => (
-        <ProjectsTemplate myData={data.allMongodbColtatuProiecte.edges} />
+        <ProjectsTemplate myData={data.allCustomNodeProjects.edges} />
       )}
     />
   )
@@ -30,11 +36,10 @@ export default Proiecte
 
 Proiecte.propTypes = {
   data: PropTypes.shape({
-    allMongodbColtatuConcepte: PropTypes.shape({
+    allCustomNodeProjects: PropTypes.shape({
       edges: PropTypes.shape({
         node: PropTypes.shape({
           title: PropTypes.string.isRequired,
-          linkuri: PropTypes.arrayOf(PropTypes.any).isRequired,
           id: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,

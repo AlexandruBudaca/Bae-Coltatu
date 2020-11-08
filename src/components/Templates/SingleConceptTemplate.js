@@ -6,20 +6,23 @@ import SingleTemplate from "./SingleTemplate"
 import "../Styles/proiecte.css"
 
 const SingleConceptTemplate = ({ data }) => {
-  return (
-    <SingleTemplate myData={data.mongodbColtatuConcepte} back="/concepte/" />
-  )
+  return <SingleTemplate myData={data.customNodeConcepte} back="/concepte/" />
 }
 
 export default SingleConceptTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    mongodbColtatuConcepte(id: { eq: $id }) {
+    customNodeConcepte(id: { eq: $id }) {
       id
-      titlu
-      linkuri
-      description
+      title
+      localImages {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 3000) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
     }
   }
 `

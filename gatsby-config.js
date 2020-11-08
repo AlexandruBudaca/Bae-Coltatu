@@ -33,28 +33,28 @@ module.exports = {
         icon: `src/images/logoColtatu.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-source-mongodb",
-      options: {
-        dbName: "coltatu",
-        collection: [`concepte`, `concursuri`, `proiecte`],
-        server: {
-          address: "alex-shard-00-00.njtpl.mongodb.net",
-          port: 27017,
-        },
-        auth: {
-          user: "AlexandruBudaca",
-          password: "Selet10!",
-        },
-        extraParams: {
-          replicaSet: "atlas-nq7h79-shard-0",
-          ssl: true,
-          authSource: "admin",
-          retryWrites: true,
-        },
-        preserveObjectIds: true,
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-mongodb",
+    //   options: {
+    //     dbName: "coltatu",
+    //     collection: [`concepte`, `concursuri`, `proiecte`],
+    //     server: {
+    //       address: "alex-shard-00-00.njtpl.mongodb.net",
+    //       port: 27017,
+    //     },
+    //     auth: {
+    //       user: `${process.MONGO.USER}`,
+    //       password: `${process.MONGO.KEY}`,
+    //     },
+    //     extraParams: {
+    //       replicaSet: "atlas-nq7h79-shard-0",
+    //       ssl: true,
+    //       authSource: "admin",
+    //       retryWrites: true,
+    //     },
+    //     preserveObjectIds: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
