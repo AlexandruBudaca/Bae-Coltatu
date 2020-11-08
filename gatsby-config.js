@@ -43,8 +43,8 @@ module.exports = {
           port: 27017,
         },
         auth: {
-          user: `${process.env.MONGO_USER}`,
-          password: `${process.env.MONGO_KEY}`,
+          user: "AlexandruBudaca",
+          password: "Selet10!",
         },
         extraParams: {
           replicaSet: "atlas-nq7h79-shard-0",
@@ -53,6 +53,42 @@ module.exports = {
           retryWrites: true,
         },
         preserveObjectIds: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "CustomNodeProjects",
+        // Making this plural (optional).
+        name: "localImages",
+        // Path to the leaf node.
+        imagePath: "linkuri",
+        // Set type to array.
+        type: "array",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "CustomNodeConcepte",
+        // Making this plural (optional).
+        name: "localImages",
+        // Path to the leaf node.
+        imagePath: "linkuri",
+        // Set type to array.
+        type: "array",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "CustomNodeConcursuri",
+        // Making this plural (optional).
+        name: "localImages",
+        // Path to the leaf node.
+        imagePath: "linkuri",
+        // Set type to array.
+        type: "array",
       },
     },
   ],

@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-source-filesystem": "^2.3.32",
     "gatsby-source-mongodb": "^2.3.12",
+    "gatsby-transformer-remark": "^2.9.2",
     "gatsby-transformer-sharp": "^2.5.16",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
