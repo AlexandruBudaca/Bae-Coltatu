@@ -8,19 +8,19 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
+            key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
-           paths:
+            key: dependency-cache-{{ checksum "package.json" }}
+            paths:
               - ~/.npm
               - ~/.cache
       - run: npm eslint
       - run: npm test 
       - cypress/run:
-          start: npm start
-          wait-on: 'http://localhost:8000'
-          background: true
+            start: npm start
+            wait-on: 'http://localhost:8000'
+            background: true
 
   # deploy_frontend:
   #   docker:
@@ -43,11 +43,11 @@ workflows:
     jobs:
       - frontend_build:
           context: build
-      - deploy_frontend:
-          context: deployments
-          requires:
-            - frontend_build
-            - deploy_backend
+      # - deploy_frontend:
+      #     context: deployments
+      #     requires:
+      #       - frontend_build
+      #       - deploy_backend
         filters:
           branches:
             only:
