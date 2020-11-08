@@ -15,8 +15,8 @@ jobs:
            paths:
               - ~/.npm
               - ~/.cache
-      - run: npm run eslint
-      - run: npm run test 
+      - run: npm eslint
+      - run: npm test 
       - cypress/run:
           start: npm start
           wait-on: 'http://localhost:8000'
@@ -48,7 +48,7 @@ workflows:
       #     requires:
       #       - frontend_build
       #       - deploy_backend
-          filters:
-            branches:
-              only:
-                - main
+        filters:
+          branches:
+            only:
+              - main
