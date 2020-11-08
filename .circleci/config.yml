@@ -43,11 +43,11 @@ workflows:
     jobs:
       - frontend_build:
           context: build
-      # - deploy_frontend:
-      #     context: deployments
-      #     requires:
-      #       - frontend_build
-      #       - deploy_backend
+      - deploy_frontend:
+          context: deployments
+          requires:
+            - frontend_build
+            - deploy_backend
         filters:
           branches:
             only:
