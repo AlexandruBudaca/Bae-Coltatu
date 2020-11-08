@@ -7,10 +7,7 @@ import "../Styles/proiecte.css"
 
 const SingleConcursTemplate = ({ data }) => {
   return (
-    <SingleTemplate
-      myData={data.mongodbColtatuConcursuri}
-      back="/concursuri/"
-    />
+    <SingleTemplate myData={data.customNodeConcursuri} back="/concursuri/" />
   )
 }
 
@@ -18,11 +15,16 @@ export default SingleConcursTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    mongodbColtatuConcursuri(id: { eq: $id }) {
+    customNodeConcursuri(id: { eq: $id }) {
       id
-      titlu
-      linkuri
-      description
+      title
+      localImages {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 3000) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
     }
   }
 `
