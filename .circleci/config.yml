@@ -8,31 +8,31 @@ jobs:
       - image: circleci/node:8.12.0
     working_directory: ~/project
 
-    steps:
-      # - checkout
+    steps:  
+      - checkout
       - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-            paths:
-              - ~/.npm
-              - ~/.cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
       - run: npm eslint
       - run: npm test 
       - cypress/run:
-            start: npm start
-            wait-on: 'http://localhost:8000'
-            background: true
+          start: npm start
+          wait-on: 'http://localhost:8000'
+          background: true
 
 workflows:
   version: 2
 
-  my_workflow:
-    jobs:
-      - frontend_build:
-          context: build
-          filters:
-            branches:
-              only:
-                - main
+my_workflow:
+  jobs:
+    - frontend_build:
+        context: build
+        filters:
+          branches:
+            only:
+              - main
