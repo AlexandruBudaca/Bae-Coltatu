@@ -58,7 +58,6 @@ const IndexPage = ({ data }) => {
             {data.homeCarousel.edges.map(images => (
               <Carousel.Item key={images.node.id}>
                 <Img
-                  loading="eager"
                   className="d-block w-100"
                   fluid={images.node.childImageSharp.fluid}
                   alt={images.node.base}

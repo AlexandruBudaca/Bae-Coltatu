@@ -28,5 +28,5 @@ export const pageQuery = graphql`
 `
 SingleConceptTemplate.propTypes = {
   data: PropTypes.objectOf(PropTypes),
-  mongodbColtatuConcepte: PropTypes.objectOf(PropTypes),
+  customNodeConcepte: PropTypes.objectOf(PropTypes),
 }

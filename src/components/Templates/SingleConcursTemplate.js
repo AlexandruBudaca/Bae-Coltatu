@@ -30,5 +30,5 @@ export const pageQuery = graphql`
 `
 SingleConcursTemplate.propTypes = {
   data: PropTypes.objectOf(PropTypes),
-  mongodbColtatuConcursuri: PropTypes.objectOf(PropTypes),
+  customNodeConcursuri: PropTypes.objectOf(PropTypes),
 }
