@@ -1,6 +1,6 @@
 version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1
+orbs:
+  cypress: cypress-io/cypress@1
 jobs:
   frontend_build:
     docker:
@@ -18,11 +18,10 @@ jobs:
             - ~/.cache
       - run: npm eslint
       - run: npm test 
-      - run: $(npm bin)/cypress run
-      # - cypress/run:
-      #     start: npm start
-      #     wait-on: 'http://localhost:8000'
-      #     background: true
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:8000'
+          background: true
 
 workflows:
   version: 2
