@@ -24,6 +24,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm test
+      - run: npm lint 
       - run: npm run testCypress
 
 
