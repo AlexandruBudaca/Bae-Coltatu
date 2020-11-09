@@ -18,10 +18,7 @@ jobs:
             - ~/.cache
       - run: npm eslint
       - run: npm test 
-      - cypress/run:
-          start: npm start
-          wait-on: 'http://localhost:8000'
-          background: true
+      - cypress/run
 
 workflows:
   version: 2
