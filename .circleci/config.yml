@@ -24,5 +24,9 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm test
-      - run: npm run e2e
+      - run: 
+          command: npm start
+          background: true
+      - run: npm run cy:run
+
 
