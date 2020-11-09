@@ -23,5 +23,6 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm e2e
+      - run: npm test
+      - run: npm run e2e
 
