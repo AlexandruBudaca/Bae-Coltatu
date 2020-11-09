@@ -1,35 +1,27 @@
-version: 2.1
-
+version: 2
 jobs:
-  frontend_build:
+  build:
     docker:
-      - image: circleci/node:8.12.0
-    working_directory: ~/project
-    steps:  
+      - image: cypress/base:10
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
+    steps:
       - checkout
       - restore_cache:
           keys:
             - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
             - v1-deps-{{ .Branch }}
             - v1-deps
-      - run: npm install
+      - run:
+          name: Install Dependencies
+          command: npm ci
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          # cache NPM modules and the folder with the Cypress binary
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm eslint
-      - run: npm test 
-      - run: $(npm bin)/cypress run
+      - run: $(npm bin)/cypress run --record --key <record_key>
 
-workflows:
-  version: 2
-
-  my_workflow:
-    jobs:
-      - frontend_build:
-          context: build
-          filters:
-            branches:
-              only:
-                - main
