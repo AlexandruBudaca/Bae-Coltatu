@@ -27,13 +27,12 @@ jobs:
       - run: npm run lint 
       - run: npm run testCypress
 
-my_workflow:
-  jobs:
-    - build:
-        context: build
-        filters:
-          branches:
-            only:
-              - main
+workflow:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
 
 
