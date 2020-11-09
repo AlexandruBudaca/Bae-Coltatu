@@ -30,6 +30,7 @@ jobs:
 my_workflow:
   jobs:
     - build:
+        context: build
         filters:
           branches:
             only:
