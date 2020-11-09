@@ -27,8 +27,7 @@ jobs:
       - run: npm run lint 
       - run: npm run testCypress
 
-workflows:
-  build:
+workflow:
     jobs:
       - build:
           filters:
