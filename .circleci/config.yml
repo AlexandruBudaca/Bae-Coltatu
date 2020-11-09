@@ -24,9 +24,6 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm test
-      - run: 
-          command: npm start & wait-on http://localhost:8000
-          background: true
-      - run: npm run cy:run
+      - run: npm run testCypress
 
 
