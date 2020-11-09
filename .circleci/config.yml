@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  frontend_build:
     docker:
       - image: cypress/base:10
         environment:
@@ -26,5 +26,13 @@ jobs:
       - run: npm test
       - run: npm run lint 
       - run: npm run testCypress
+
+my_workflow:
+  jobs:
+    - frontend_build:
+        filters:
+          branches:
+            only:
+              - main
 
 
