@@ -61,6 +61,7 @@ const IndexPage = ({ data }) => {
                   className="d-block w-100"
                   fluid={images.node.childImageSharp.fluid}
                   alt={images.node.base}
+                  loading="eager"
                 />
               </Carousel.Item>
             ))}
