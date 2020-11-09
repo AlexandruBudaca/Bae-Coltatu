@@ -1,13 +1,12 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+# orbs:
+#   cypress: cypress-io/cypress@1
 
 jobs:
   frontend_build:
     docker:
       - image: circleci/node:8.12.0
     working_directory: ~/project
-
     steps:  
       - checkout
       - restore_cache:
@@ -28,11 +27,11 @@ jobs:
 workflows:
   version: 2
 
-my_workflow:
-  jobs:
-    - frontend_build:
-        context: build
-        filters:
-          branches:
-            only:
-              - main
+  my_workflow:
+    jobs:
+      - frontend_build:
+          context: build
+          filters:
+            branches:
+              only:
+                - main
