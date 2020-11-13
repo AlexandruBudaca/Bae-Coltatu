@@ -128,7 +128,34 @@
     "https://lh3.googleusercontent.com/pw/ACtC-3cumJCMoL-fRJhDeLgAJk058zC3U-tVAyAN_MYgT4xw5hROpmBoOFCwEqMmcHNgLl7iirb4RcJDwe0way8f71KF-cnWuvExSOF-LBvpVgR3vWu7CLcBpjtAYZLTH9TbGb5BOrBWv3PPxE8naXfSFkZN=w1682-h946-no?authuser=0"
   ],
   "description": "Ceva despre!"
-},{
+},
+{
+  "_id": {
+    "$oid": "5f91e475339d9028558b26b3"
+  },
+  "titlu": "Residence Bulgaria",
+  "linkuri": [
+    "https://lh3.googleusercontent.com/pw/ACtC-3fYXKAJHP8cKj8j-gZfZy4aQKWPoGp2A7Q8DR2QJBWJxSY_wWHoD5l6q0KiG168gOqIFXL6KS_kKDWdr6VANm5UGLZ3mWoiYuX2-tzjetIW5121oASnU_Fevt8A-hgVKERSQN-0YMTMk1LS3vYivvKH=w1067-h800-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3e0trrVqgWD_VeiRtlaf3nDuXlvjEHfoSDYO1givvh7yEBwz2nN4T-PTIgr8LHee_4LiQrUMqM85paF92jelaoar8uUO0ds9Qjwmm-nqAPtrmrHjIEqTUfzca-zkIoeQf73JhskYtcT45RHvOp2wz2b=w1067-h800-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3coDiVQFyr47BQjxp5sCVNCqCjhRn-AabHvzQsCAg3eiZUXKLWN2v-Z-1kvXA8EveF51KspSXd_ulqQv9_klrhFJTjafgghGL75Zwku1lM5V6q85rNWkuzUZUIscImxF8M_wxS4AGDA9OUw81eQOG_I=w1107-h800-no?authuser=0",
+    "https://lh3.googleusercontent.com/pw/ACtC-3fsyF1yfDmHk000Jtk7FZ8FZWYEnDV9lha4JGX6-xruic6PIt60IdU0axL41Yvi5twzgg7jKtsL-JuxCwGzEQBCgKZ7_5q_9ev3r1V9gTCP4-iHUSESSdNx2D02syKjA0QQHWudiTUJH1-Th92oLVxs=w1067-h800-no?authuser=0"
+  ],
+  "description": "Ceva despre!"
+},  {
+  "_id": {
+    "$oid":"5f802aac44a1036435fd1a04"
+  },
+    "titlu": "Restaurant Casa Romaneasca",
+    "linkuri": [
+      "https://lh3.googleusercontent.com/pw/ACtC-3fePIW7d6fvsBBc5lb6FLkfT-Cm-Vpsk_12rCorcnoIPbIzfWus5aAlY8bQZ36_WolVwpnby0U6CzndiA0ysYKXmN5CnCCtmneMEmTvqxkzIZrmLlF8ypUMkt_eFwB8vyCm9YMrBr8ELvHKZ62cKbu7=w1514-h946-no?authuser=0",
+      "https://lh3.googleusercontent.com/pw/ACtC-3cajK5ItaSDGbWYLgpKcv_XWY03krx3M8KzgZ6Ht62mtLdxnVC646zCCjZTfj5G94HuFeLBWNCdkov5XwXxMKUBg-W47l7FWECP-Q13evl8Fta8gVURk3qHIz0TJ9rSEVi2qdXv2zES_uQVDbVqwJkd=w1420-h946-no?authuser=0",
+      "https://lh3.googleusercontent.com/pw/ACtC-3dMv6u-jHptrnS5QghT4W07gaEZgUb8fKslXC_9OwbpfIinDUXYBJPbTW1eY6KUTPUo3WNCxF4RcYRFBAlz7fBkm5rZ_qu_mfbCvRb4StXlC_9Y-wCFPYQ_WMslA7F9izOe_idtoaeyn7DifogXYlQM=w1420-h946-no?authuser=0",
+      "https://lh3.googleusercontent.com/pw/ACtC-3fC9vPTBStcd9fMTlUXtT_VVZSPryHDDS5SqHGLEoi0ZW4FHHpzCxuxSkXDD-MVHjtZqqQXOxaLsnBsJFDVj5Z9DvOV6uEmDQl2adBb1VgJvpdMVhMTaxKi-UYFHBrNZPS9iClNAMUk48PZXubJxsRV=w1353-h946-no?authuser=0"
+    ],
+    "description": "Ceva depre!"
+}
+,
+{
   "_id": {
     "$oid": "5f91e57a339d9029558b56b1"
   },
