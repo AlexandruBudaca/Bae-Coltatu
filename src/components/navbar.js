@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import { Navbar, Nav } from "react-bootstrap"
 import { TweenMax } from "gsap"
-import logo from "../images/logoColtatu.png"
+import Logo from "../images/logoColtatu.png"
 import "./Styles/navbar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -23,10 +23,11 @@ const MyNavbar = ({ location }) => {
       expand="lg"
       fixed="top"
       className={location.pathname === "/" ? "background-home" : null}
+      data-testid="navbar"
     >
       <Navbar.Brand href="/">
         <img
-          src={logo}
+          src={Logo}
           width="60"
           height="60"
           className="d-inline-block align-top"
